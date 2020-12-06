@@ -1,0 +1,428 @@
+Sending build context to Docker daemon  371.3MB
+Step 1/23 : FROM python:3.7
+ ---> 84d66a048f90
+Step 2/23 : LABEL maintainer="yishusahil@gmail.com"
+ ---> Using cache
+ ---> eb0d7c4b5690
+Step 3/23 : RUN apt-get update
+ ---> Using cache
+ ---> 9d68ff50a6e7
+Step 4/23 : RUN curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add
+ ---> Using cache
+ ---> dfb813900899
+Step 5/23 : RUN echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list
+ ---> Using cache
+ ---> e65ea756d86f
+Step 6/23 : RUN apt-get -y update && apt-get -y install google-chrome-stable --no-install-recommends
+ ---> Using cache
+ ---> 98a2233314db
+Step 7/23 : RUN apt install --assume-yes npm
+ ---> Running in 3acefbc9f43b
+[91m
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+[0mReading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  build-essential gyp javascript-common libbrotli1 libc-ares2 libjs-inherits
+  libjs-is-typedarray libnode-dev libnode64 libuv1 libuv1-dev node-abbrev
+  node-ajv node-ansi node-ansi-align node-ansi-regex node-ansi-styles
+  node-ansistyles node-aproba node-archy node-are-we-there-yet node-asn1
+  node-assert-plus node-asynckit node-aws-sign2 node-aws4 node-balanced-match
+  node-bcrypt-pbkdf node-bluebird node-boxen node-brace-expansion
+  node-builtin-modules node-builtins node-cacache node-call-limit
+  node-camelcase node-caseless node-chalk node-chownr node-cli-boxes
+  node-cliui node-clone node-co node-color-convert node-color-name
+  node-combined-stream node-concat-map node-concat-stream node-config-chain
+  node-console-control-strings node-copy-concurrently node-core-util-is
+  node-cross-spawn node-cyclist node-dashdash node-decamelize
+  node-decompress-response node-deep-extend node-defaults node-delayed-stream
+  node-delegates node-detect-indent node-detect-newline node-duplexer3
+  node-duplexify node-ecc-jsbn node-editor node-encoding node-end-of-stream
+  node-errno node-escape-string-regexp node-execa node-extend node-extsprintf
+  node-find-up node-flush-write-stream node-forever-agent node-form-data
+  node-from2 node-fs-vacuum node-fs-write-stream-atomic node-fs.realpath
+  node-gauge node-get-caller-file node-get-stream node-getpass node-glob
+  node-got node-graceful-fs node-gyp node-har-schema node-har-validator
+  node-has-flag node-has-symbol-support-x node-has-to-string-tag-x
+  node-has-unicode node-hosted-git-info node-http-signature node-iconv-lite
+  node-iferr node-import-lazy node-imurmurhash node-inflight node-inherits
+  node-ini node-invert-kv node-is-builtin-module node-is-npm node-is-object
+  node-is-plain-obj node-is-retry-allowed node-is-stream node-is-typedarray
+  node-isarray node-isexe node-isstream node-isurl node-jsbn
+  node-json-parse-better-errors node-json-schema node-json-stable-stringify
+  node-json-stringify-safe node-jsonify node-jsonparse node-jsonstream
+  node-jsprim node-latest-version node-lazy-property node-lcid node-libnpx
+  node-locate-path node-lockfile node-lowercase-keys node-lru-cache node-mem
+  node-mime-types node-mimic-fn node-mimic-response node-minimatch
+  node-minimist node-mississippi node-mkdirp node-move-concurrently
+  node-mute-stream node-node-uuid node-nopt node-normalize-package-data
+  node-npm-package-arg node-npm-run-path node-npmlog node-oauth-sign
+  node-object-assign node-once node-opener node-os-locale node-osenv
+  node-p-cancelable node-p-finally node-p-limit node-p-locate node-p-timeout
+  node-package-json node-parallel-transform node-path-exists
+  node-path-is-absolute node-path-is-inside node-performance-now
+  node-prepend-http node-process-nextick-args node-promise-inflight
+  node-promzard node-proto-list node-prr node-pump node-pumpify node-punycode
+  node-qs node-qw node-rc node-read node-read-package-json
+  node-readable-stream node-registry-auth-token node-registry-url node-request
+  node-require-directory node-require-main-filename node-resolve-from
+  node-retry node-rimraf node-run-queue node-safe-buffer node-semver
+  node-semver-diff node-set-blocking node-sha node-shebang-command
+  node-shebang-regex node-signal-exit node-slash node-slide node-sorted-object
+  node-spdx-correct node-spdx-expression-parse node-spdx-license-ids
+  node-sshpk node-ssri node-stream-each node-stream-iterate node-stream-shift
+  node-string-decoder node-string-width node-strip-ansi node-strip-eof
+  node-strip-json-comments node-supports-color node-tar node-term-size
+  node-text-table node-through node-through2 node-timed-out node-tough-cookie
+  node-tunnel-agent node-tweetnacl node-typedarray node-uid-number
+  node-unique-filename node-unpipe node-url-parse-lax node-url-to-options
+  node-util-deprecate node-uuid node-validate-npm-package-license
+  node-validate-npm-package-name node-verror node-wcwidth.js node-which
+  node-which-module node-wide-align node-widest-line node-wrap-ansi
+  node-wrappy node-write-file-atomic node-xdg-basedir node-xtend node-y18n
+  node-yallist node-yargs node-yargs-parser nodejs nodejs-doc
+  python-pkg-resources
+Suggested packages:
+  apache2 | lighttpd | httpd python-setuptools
+The following NEW packages will be installed:
+  build-essential gyp javascript-common libbrotli1 libc-ares2 libjs-inherits
+  libjs-is-typedarray libnode-dev libnode64 libuv1 libuv1-dev node-abbrev
+  node-ajv node-ansi node-ansi-align node-ansi-regex node-ansi-styles
+  node-ansistyles node-aproba node-archy node-are-we-there-yet node-asn1
+  node-assert-plus node-asynckit node-aws-sign2 node-aws4 node-balanced-match
+  node-bcrypt-pbkdf node-bluebird node-boxen node-brace-expansion
+  node-builtin-modules node-builtins node-cacache node-call-limit
+  node-camelcase node-caseless node-chalk node-chownr node-cli-boxes
+  node-cliui node-clone node-co node-color-convert node-color-name
+  node-combined-stream node-concat-map node-concat-stream node-config-chain
+  node-console-control-strings node-copy-concurrently node-core-util-is
+  node-cross-spawn node-cyclist node-dashdash node-decamelize
+  node-decompress-response node-deep-extend node-defaults node-delayed-stream
+  node-delegates node-detect-indent node-detect-newline node-duplexer3
+  node-duplexify node-ecc-jsbn node-editor node-encoding node-end-of-stream
+  node-errno node-escape-string-regexp node-execa node-extend node-extsprintf
+  node-find-up node-flush-write-stream node-forever-agent node-form-data
+  node-from2 node-fs-vacuum node-fs-write-stream-atomic node-fs.realpath
+  node-gauge node-get-caller-file node-get-stream node-getpass node-glob
+  node-got node-graceful-fs node-gyp node-har-schema node-har-validator
+  node-has-flag node-has-symbol-support-x node-has-to-string-tag-x
+  node-has-unicode node-hosted-git-info node-http-signature node-iconv-lite
+  node-iferr node-import-lazy node-imurmurhash node-inflight node-inherits
+  node-ini node-invert-kv node-is-builtin-module node-is-npm node-is-object
+  node-is-plain-obj node-is-retry-allowed node-is-stream node-is-typedarray
+  node-isarray node-isexe node-isstream node-isurl node-jsbn
+  node-json-parse-better-errors node-json-schema node-json-stable-stringify
+  node-json-stringify-safe node-jsonify node-jsonparse node-jsonstream
+  node-jsprim node-latest-version node-lazy-property node-lcid node-libnpx
+  node-locate-path node-lockfile node-lowercase-keys node-lru-cache node-mem
+  node-mime-types node-mimic-fn node-mimic-response node-minimatch
+  node-minimist node-mississippi node-mkdirp node-move-concurrently
+  node-mute-stream node-node-uuid node-nopt node-normalize-package-data
+  node-npm-package-arg node-npm-run-path node-npmlog node-oauth-sign
+  node-object-assign node-once node-opener node-os-locale node-osenv
+  node-p-cancelable node-p-finally node-p-limit node-p-locate node-p-timeout
+  node-package-json node-parallel-transform node-path-exists
+  node-path-is-absolute node-path-is-inside node-performance-now
+  node-prepend-http node-process-nextick-args node-promise-inflight
+  node-promzard node-proto-list node-prr node-pump node-pumpify node-punycode
+  node-qs node-qw node-rc node-read node-read-package-json
+  node-readable-stream node-registry-auth-token node-registry-url node-request
+  node-require-directory node-require-main-filename node-resolve-from
+  node-retry node-rimraf node-run-queue node-safe-buffer node-semver
+  node-semver-diff node-set-blocking node-sha node-shebang-command
+  node-shebang-regex node-signal-exit node-slash node-slide node-sorted-object
+  node-spdx-correct node-spdx-expression-parse node-spdx-license-ids
+  node-sshpk node-ssri node-stream-each node-stream-iterate node-stream-shift
+  node-string-decoder node-string-width node-strip-ansi node-strip-eof
+  node-strip-json-comments node-supports-color node-tar node-term-size
+  node-text-table node-through node-through2 node-timed-out node-tough-cookie
+  node-tunnel-agent node-tweetnacl node-typedarray node-uid-number
+  node-unique-filename node-unpipe node-url-parse-lax node-url-to-options
+  node-util-deprecate node-uuid node-validate-npm-package-license
+  node-validate-npm-package-name node-verror node-wcwidth.js node-which
+  node-which-module node-wide-align node-widest-line node-wrap-ansi
+  node-wrappy node-write-file-atomic node-xdg-basedir node-xtend node-y18n
+  node-yallist node-yargs node-yargs-parser nodejs nodejs-doc npm
+  python-pkg-resources
+0 upgraded, 254 newly installed, 0 to remove and 3 not upgraded.
+Need to get 11.0 MB of archives.
+After this operation, 52.2 MB of additional disk space will be used.
+Get:1 http://deb.debian.org/debian buster/main amd64 build-essential amd64 12.6 [7576 B]
+Get:2 http://deb.debian.org/debian buster/main amd64 python-pkg-resources all 40.8.0-1 [182 kB]
+Err:3 http://security.debian.org/debian-security buster/updates/main amd64 libnode64 amd64 10.19.0~dfsg1-1
+  404  Not Found [IP: 151.101.8.204 80]
+Get:4 http://deb.debian.org/debian buster/main amd64 gyp all 0.1+20180428git4d467626-3 [238 kB]
+Err:5 http://security.debian.org/debian-security buster/updates/main amd64 libnode-dev amd64 10.19.0~dfsg1-1
+  404  Not Found [IP: 151.101.8.204 80]
+Get:6 http://deb.debian.org/debian buster/main amd64 javascript-common all 11 [6120 B]
+Get:7 http://deb.debian.org/debian buster/main amd64 libbrotli1 amd64 1.0.7-2 [270 kB]
+Get:8 http://deb.debian.org/debian buster/main amd64 libc-ares2 amd64 1.14.0-1 [85.8 kB]
+Get:9 http://deb.debian.org/debian buster/main amd64 libjs-inherits all 2.0.3-1 [2762 B]
+Get:10 http://deb.debian.org/debian buster/main amd64 libjs-is-typedarray all 1.0.0-2 [2876 B]
+Err:11 http://security.debian.org/debian-security buster/updates/main amd64 nodejs amd64 10.19.0~dfsg1-1
+  404  Not Found [IP: 151.101.8.204 80]
+Get:12 http://deb.debian.org/debian buster/main amd64 libuv1 amd64 1.24.1-1 [110 kB]
+Get:13 http://deb.debian.org/debian buster/main amd64 libuv1-dev amd64 1.24.1-1 [130 kB]
+Get:14 http://deb.debian.org/debian buster/main amd64 node-abbrev all 1.1.1-1 [4352 B]
+Get:15 http://deb.debian.org/debian buster/main amd64 node-jsonify all 0.0.0-1 [5408 B]
+Err:16 http://security.debian.org/debian-security buster/updates/main amd64 nodejs-doc all 10.19.0~dfsg1-1
+  404  Not Found [IP: 151.101.8.204 80]
+Get:17 http://deb.debian.org/debian buster/main amd64 node-json-stable-stringify all 1.0.1-1 [4450 B]
+Get:18 http://deb.debian.org/debian buster/main amd64 node-co all 4.6.0-1 [7550 B]
+Get:19 http://deb.debian.org/debian buster/main amd64 node-ajv all 5.0.0-1 [64.9 kB]
+Get:20 http://deb.debian.org/debian buster/main amd64 node-ansi all 0.3.0-3 [9068 B]
+Get:21 http://deb.debian.org/debian buster/main amd64 node-clone all 2.1.2-1 [7880 B]
+Get:22 http://deb.debian.org/debian buster/main amd64 node-defaults all 1.0.3-1 [3108 B]
+Get:23 http://deb.debian.org/debian buster/main amd64 node-wcwidth.js all 1.0.0-1 [6408 B]
+Get:24 http://deb.debian.org/debian buster/main amd64 node-ansi-regex all 3.0.0-1 [3658 B]
+Get:25 http://deb.debian.org/debian buster/main amd64 node-strip-ansi all 4.0.0-1 [3078 B]
+Get:26 http://deb.debian.org/debian buster/main amd64 node-string-width all 2.1.1-1 [3992 B]
+Get:27 http://deb.debian.org/debian buster/main amd64 node-ansi-align all 2.0.0-1 [4704 B]
+Get:28 http://deb.debian.org/debian buster/main amd64 node-color-name all 1.1.3-1 [4090 B]
+Get:29 http://deb.debian.org/debian buster/main amd64 node-color-convert all 1.9.0-3 [10.1 kB]
+Get:30 http://deb.debian.org/debian buster/main amd64 node-ansi-styles all 3.2.1-1 [5684 B]
+Get:31 http://deb.debian.org/debian buster/main amd64 node-ansistyles all 0.1.3-1 [4026 B]
+Get:32 http://deb.debian.org/debian buster/main amd64 node-aproba all 1.2.0-1 [5008 B]
+Get:33 http://deb.debian.org/debian buster/main amd64 node-archy all 1.0.0-2 [4340 B]
+Get:34 http://deb.debian.org/debian buster/main amd64 node-delegates all 1.0.0-1 [3864 B]
+Get:35 http://deb.debian.org/debian buster/main amd64 node-are-we-there-yet all 1.1.4-1 [7662 B]
+Get:36 http://deb.debian.org/debian buster/main amd64 node-asn1 all 0.2.3-1 [6880 B]
+Get:37 http://deb.debian.org/debian buster/main amd64 node-assert-plus all 1.0.0-1 [6162 B]
+Get:38 http://deb.debian.org/debian buster/main amd64 node-asynckit all 0.4.0-2 [10.4 kB]
+Get:39 http://deb.debian.org/debian buster/main amd64 node-aws-sign2 all 0.7.1-1 [3716 B]
+Get:40 http://deb.debian.org/debian buster/main amd64 node-aws4 all 1.8.0-1 [11.7 kB]
+Get:41 http://deb.debian.org/debian buster/main amd64 node-balanced-match all 0.4.2-1 [3982 B]
+Get:42 http://deb.debian.org/debian buster/main amd64 node-tweetnacl all 0.14.5+dfsg-3 [21.1 kB]
+Get:43 http://deb.debian.org/debian buster/main amd64 node-bcrypt-pbkdf all 1.0.1-1 [10.4 kB]
+Get:44 http://deb.debian.org/debian buster/main amd64 node-bluebird all 3.5.1+dfsg2-2 [36.4 kB]
+Get:45 http://deb.debian.org/debian buster/main amd64 node-camelcase all 5.0.0-1 [3964 B]
+Get:46 http://deb.debian.org/debian buster/main amd64 node-escape-string-regexp all 1.0.5-1 [3218 B]
+Get:47 http://deb.debian.org/debian buster/main amd64 node-has-flag all 2.0.0-1 [3172 B]
+Get:48 http://deb.debian.org/debian buster/main amd64 node-supports-color all 4.4.0-2 [4742 B]
+Get:49 http://deb.debian.org/debian buster/main amd64 node-chalk all 2.3.0-2 [11.2 kB]
+Get:50 http://deb.debian.org/debian buster/main amd64 node-cli-boxes all 1.0.0-1 [3252 B]
+Get:51 http://deb.debian.org/debian buster/main amd64 node-yallist all 3.0.3-1 [6052 B]
+Get:52 http://deb.debian.org/debian buster/main amd64 node-lru-cache all 5.1.1-4 [8320 B]
+Get:53 http://deb.debian.org/debian buster/main amd64 node-isexe all 2.0.0-4 [4404 B]
+Get:54 http://deb.debian.org/debian buster/main amd64 node-which all 1.3.0-2 [5804 B]
+Get:55 http://deb.debian.org/debian buster/main amd64 node-shebang-regex all 2.0.0-1 [2742 B]
+Get:56 http://deb.debian.org/debian buster/main amd64 node-shebang-command all 1.2.0-1 [2900 B]
+Get:57 http://deb.debian.org/debian buster/main amd64 node-cross-spawn all 5.1.0-2 [8732 B]
+Get:58 http://deb.debian.org/debian buster/main amd64 node-get-stream all 3.0.0-1 [4724 B]
+Get:59 http://deb.debian.org/debian buster/main amd64 node-is-stream all 1.1.0-1 [2998 B]
+Get:60 http://deb.debian.org/debian buster/main amd64 node-npm-run-path all 2.0.2-2 [4412 B]
+Get:61 http://deb.debian.org/debian buster/main amd64 node-p-finally all 1.0.0-2 [3230 B]
+Get:62 http://deb.debian.org/debian buster/main amd64 node-signal-exit all 3.0.2-1 [5648 B]
+Get:63 http://deb.debian.org/debian buster/main amd64 node-strip-eof all 1.0.0-2 [3010 B]
+Get:64 http://deb.debian.org/debian buster/main amd64 node-execa all 0.10.0+dfsg-1 [8936 B]
+Get:65 http://deb.debian.org/debian buster/main amd64 node-term-size all 1.2.0+dfsg-2 [3944 B]
+Get:66 http://deb.debian.org/debian buster/main amd64 node-widest-line all 1.2.2-1 [3360 B]
+Get:67 http://deb.debian.org/debian buster/main amd64 node-boxen all 1.2.2-1 [4764 B]
+Get:68 http://deb.debian.org/debian buster/main amd64 node-concat-map all 0.0.1-1 [3462 B]
+Get:69 http://deb.debian.org/debian buster/main amd64 node-brace-expansion all 1.1.8-1 [5798 B]
+Get:70 http://deb.debian.org/debian buster/main amd64 node-builtin-modules all 3.0.0-1 [3780 B]
+Get:71 http://deb.debian.org/debian buster/main amd64 node-builtins all 1.0.3-1 [2970 B]
+Get:72 http://deb.debian.org/debian buster/main amd64 node-chownr all 1.1.1-1 [3432 B]
+Get:73 http://deb.debian.org/debian buster/main amd64 node-minimatch all 3.0.4-3 [13.4 kB]
+Get:74 http://deb.debian.org/debian buster/main amd64 node-inherits all 2.0.3-1 [3744 B]
+Get:75 http://deb.debian.org/debian buster/main amd64 node-wrappy all 1.0.2-1 [3114 B]
+Get:76 http://deb.debian.org/debian buster/main amd64 node-once all 1.4.0-3 [4344 B]
+Get:77 http://deb.debian.org/debian buster/main amd64 node-fs.realpath all 1.0.0-1 [5522 B]
+Get:78 http://deb.debian.org/debian buster/main amd64 node-inflight all 1.0.6-1 [3334 B]
+Get:79 http://deb.debian.org/debian buster/main amd64 node-path-is-absolute all 1.0.0-1 [3266 B]
+Get:80 http://deb.debian.org/debian buster/main amd64 node-glob all 7.1.3-2 [19.1 kB]
+Get:81 http://deb.debian.org/debian buster/main amd64 node-graceful-fs all 4.1.11-1 [10.8 kB]
+Get:82 http://deb.debian.org/debian buster/main amd64 node-typedarray all 0.0.6-1 [8202 B]
+Get:83 http://deb.debian.org/debian buster/main amd64 node-concat-stream all 1.6.2-1 [5644 B]
+Get:84 http://deb.debian.org/debian buster/main amd64 node-end-of-stream all 1.4.1-1 [3980 B]
+Get:85 http://deb.debian.org/debian buster/main amd64 node-core-util-is all 1.0.2-1 [3410 B]
+Get:86 http://deb.debian.org/debian buster/main amd64 node-safe-buffer all 5.1.2-1 [12.2 kB]
+Get:87 http://deb.debian.org/debian buster/main amd64 node-string-decoder all 1.2.0-1 [6432 B]
+Get:88 http://deb.debian.org/debian buster/main amd64 node-process-nextick-args all 2.0.0-1 [3388 B]
+Get:89 http://deb.debian.org/debian buster/main amd64 node-util-deprecate all 1.0.2-1 [3866 B]
+Get:90 http://deb.debian.org/debian buster/main amd64 node-isarray all 2.0.4-1 [3768 B]
+Get:91 http://deb.debian.org/debian buster/main amd64 node-readable-stream all 2.3.6-1 [21.6 kB]
+Get:92 http://deb.debian.org/debian buster/main amd64 node-stream-shift all 1.0.0-1 [2850 B]
+Get:93 http://deb.debian.org/debian buster/main amd64 node-duplexify all 3.6.1-1 [5492 B]
+Get:94 http://deb.debian.org/debian buster/main amd64 node-flush-write-stream all 1.0.3-1 [3984 B]
+Get:95 http://deb.debian.org/debian buster/main amd64 node-from2 all 2.3.0-1 [4338 B]
+Get:96 http://deb.debian.org/debian buster/main amd64 node-cyclist all 1.0.1-2 [3612 B]
+Get:97 http://deb.debian.org/debian buster/main amd64 node-parallel-transform all 1.1.0-2 [4136 B]
+Get:98 http://deb.debian.org/debian buster/main amd64 node-pump all 3.0.0-1 [4936 B]
+Get:99 http://deb.debian.org/debian buster/main amd64 node-pumpify all 1.5.1-1 [4316 B]
+Get:100 http://deb.debian.org/debian buster/main amd64 node-stream-each all 1.2.2-2 [3808 B]
+Get:101 http://deb.debian.org/debian buster/main amd64 node-xtend all 4.0.1-2 [3560 B]
+Get:102 http://deb.debian.org/debian buster/main amd64 node-through2 all 2.0.5-2 [6524 B]
+Get:103 http://deb.debian.org/debian buster/main amd64 node-mississippi all 3.0.0-1 [8108 B]
+Get:104 http://deb.debian.org/debian buster/main amd64 node-mkdirp all 0.5.1-1 [4708 B]
+Get:105 http://deb.debian.org/debian buster/main amd64 node-run-queue all 1.0.3-1 [4416 B]
+Get:106 http://deb.debian.org/debian buster/main amd64 node-rimraf all 2.6.2-1 [8112 B]
+Get:107 http://deb.debian.org/debian buster/main amd64 node-imurmurhash all 0.1.4-1 [8154 B]
+Get:108 http://deb.debian.org/debian buster/main amd64 node-iferr all 1.0.2-1 [3496 B]
+Get:109 http://deb.debian.org/debian buster/main amd64 node-fs-write-stream-atomic all 1.0.10-4 [4820 B]
+Get:110 http://deb.debian.org/debian buster/main amd64 node-copy-concurrently all 1.0.5-4 [6516 B]
+Get:111 http://deb.debian.org/debian buster/main amd64 node-move-concurrently all 1.0.1-2 [4644 B]
+Get:112 http://deb.debian.org/debian buster/main amd64 node-promise-inflight all 1.0.1-1 [3104 B]
+Get:113 http://deb.debian.org/debian buster/main amd64 node-ssri all 5.2.4-2 [14.1 kB]
+Get:114 http://deb.debian.org/debian buster/main amd64 node-unique-filename all 1.1.0+ds-2 [4416 B]
+Get:115 http://deb.debian.org/debian buster/main amd64 node-y18n all 3.2.1-2 [4708 B]
+Get:116 http://deb.debian.org/debian buster/main amd64 node-cacache all 11.3.2-2 [29.5 kB]
+Get:117 http://deb.debian.org/debian buster/main amd64 node-call-limit all 1.1.0-1 [3576 B]
+Get:118 http://deb.debian.org/debian buster/main amd64 node-caseless all 0.12.0-1 [3334 B]
+Get:119 http://deb.debian.org/debian buster/main amd64 node-wrap-ansi all 4.0.0-1 [5444 B]
+Get:120 http://deb.debian.org/debian buster/main amd64 node-cliui all 4.1.0-1 [7832 B]
+Get:121 http://deb.debian.org/debian buster/main amd64 node-delayed-stream all 0.0.5-1 [4482 B]
+Get:122 http://deb.debian.org/debian buster/main amd64 node-combined-stream all 1.0.7-1 [6024 B]
+Get:123 http://deb.debian.org/debian buster/main amd64 node-proto-list all 1.2.4-1 [3046 B]
+Get:124 http://deb.debian.org/debian buster/main amd64 node-ini all 1.3.5-1 [5736 B]
+Get:125 http://deb.debian.org/debian buster/main amd64 node-config-chain all 1.1.11-1 [7612 B]
+Get:126 http://deb.debian.org/debian buster/main amd64 node-console-control-strings all 1.1.0-1 [4906 B]
+Get:127 http://deb.debian.org/debian buster/main amd64 node-dashdash all 1.14.1-2 [22.2 kB]
+Get:128 http://deb.debian.org/debian buster/main amd64 node-decamelize all 1.2.0-1 [3044 B]
+Get:129 http://deb.debian.org/debian buster/main amd64 node-mimic-response all 1.0.0-1 [3302 B]
+Get:130 http://deb.debian.org/debian buster/main amd64 node-decompress-response all 3.3.0-1 [3262 B]
+Get:131 http://deb.debian.org/debian buster/main amd64 node-deep-extend all 0.4.1-2 [5000 B]
+Get:132 http://deb.debian.org/debian buster/main amd64 node-detect-indent all 5.0.0-1 [4392 B]
+Get:133 http://deb.debian.org/debian buster/main amd64 node-detect-newline all 2.1.0-1 [2972 B]
+Get:134 http://deb.debian.org/debian buster/main amd64 node-duplexer3 all 0.1.4-4 [4844 B]
+Get:135 http://deb.debian.org/debian buster/main amd64 node-jsbn all 1.1.0-1 [13.5 kB]
+Get:136 http://deb.debian.org/debian buster/main amd64 node-ecc-jsbn all 0.1.1-1 [8832 B]
+Get:137 http://deb.debian.org/debian buster/main amd64 node-editor all 1.0.0-1 [3296 B]
+Get:138 http://deb.debian.org/debian buster/main amd64 node-iconv-lite all 0.4.13-2 [122 kB]
+Get:139 http://deb.debian.org/debian buster/main amd64 node-encoding all 0.1.12-2 [4262 B]
+Get:140 http://deb.debian.org/debian buster/main amd64 node-prr all 1.0.1-1 [3682 B]
+Get:141 http://deb.debian.org/debian buster/main amd64 node-errno all 0.1.4-1 [6572 B]
+Get:142 http://deb.debian.org/debian buster/main amd64 node-extend all 3.0.2-1 [6744 B]
+Get:143 http://deb.debian.org/debian buster/main amd64 node-extsprintf all 1.3.0-1 [4452 B]
+Get:144 http://deb.debian.org/debian buster/main amd64 node-p-limit all 1.1.0-1 [3382 B]
+Get:145 http://deb.debian.org/debian buster/main amd64 node-p-locate all 2.0.0-1 [3986 B]
+Get:146 http://deb.debian.org/debian buster/main amd64 node-path-exists all 3.0.0-1 [3154 B]
+Get:147 http://deb.debian.org/debian buster/main amd64 node-locate-path all 2.0.0-1 [3816 B]
+Get:148 http://deb.debian.org/debian buster/main amd64 node-find-up all 2.1.0-1 [3652 B]
+Get:149 http://deb.debian.org/debian buster/main amd64 node-forever-agent all 0.6.1-1 [3536 B]
+Get:150 http://deb.debian.org/debian buster/main amd64 node-mime-types all 2.1.21-1 [16.5 kB]
+Get:151 http://deb.debian.org/debian buster/main amd64 node-form-data all 2.3.2-2 [10.0 kB]
+Get:152 http://deb.debian.org/debian buster/main amd64 node-path-is-inside all 1.0.2-1 [3940 B]
+Get:153 http://deb.debian.org/debian buster/main amd64 node-fs-vacuum all 1.2.10-2 [4232 B]
+Get:154 http://deb.debian.org/debian buster/main amd64 node-object-assign all 4.1.1-2 [4336 B]
+Get:155 http://deb.debian.org/debian buster/main amd64 node-has-unicode all 2.0.1-2 [3442 B]
+Get:156 http://deb.debian.org/debian buster/main amd64 node-wide-align all 1.1.0-1 [3438 B]
+Get:157 http://deb.debian.org/debian buster/main amd64 node-gauge all 2.7.4-1 [25.1 kB]
+Get:158 http://deb.debian.org/debian buster/main amd64 node-get-caller-file all 1.0.2-1 [2814 B]
+Get:159 http://deb.debian.org/debian buster/main amd64 node-getpass all 0.1.7-1 [4142 B]
+Get:160 http://deb.debian.org/debian buster/main amd64 node-is-retry-allowed all 1.1.0-1 [3296 B]
+Get:161 http://deb.debian.org/debian buster/main amd64 node-p-cancelable all 0.3.0-1 [4322 B]
+Get:162 http://deb.debian.org/debian buster/main amd64 node-p-timeout all 1.2.0-1 [3642 B]
+Get:163 http://deb.debian.org/debian buster/main amd64 node-is-plain-obj all 1.1.0-1 [2918 B]
+Get:164 http://deb.debian.org/debian buster/main amd64 node-url-to-options all 1.0.1-1 [3152 B]
+Get:165 http://deb.debian.org/debian buster/main amd64 node-timed-out all 4.0.1-4 [3972 B]
+Get:166 http://deb.debian.org/debian buster/main amd64 node-lowercase-keys all 1.0.0-2 [3108 B]
+Get:167 http://deb.debian.org/debian buster/main amd64 node-is-object all 1.0.1-1 [3288 B]
+Get:168 http://deb.debian.org/debian buster/main amd64 node-has-symbol-support-x all 1.4.1+dfsg-1 [3948 B]
+Get:169 http://deb.debian.org/debian buster/main amd64 node-has-to-string-tag-x all 1.4.1+dfsg-1 [4066 B]
+Get:170 http://deb.debian.org/debian buster/main amd64 node-isurl all 1.0.0-1 [3598 B]
+Get:171 http://deb.debian.org/debian buster/main amd64 node-prepend-http all 2.0.0-1 [3292 B]
+Get:172 http://deb.debian.org/debian buster/main amd64 node-url-parse-lax all 1.0.0-1 [3222 B]
+Get:173 http://deb.debian.org/debian buster/main amd64 node-got all 7.1.0-1 [11.7 kB]
+Get:174 http://deb.debian.org/debian buster/main amd64 node-nopt all 3.0.6-3 [9538 B]
+Get:175 http://deb.debian.org/debian buster/main amd64 node-set-blocking all 2.0.0-1 [3806 B]
+Get:176 http://deb.debian.org/debian buster/main amd64 node-npmlog all 4.1.2-1 [8592 B]
+Get:177 http://deb.debian.org/debian buster/main amd64 node-osenv all 0.1.5-1 [4332 B]
+Get:178 http://deb.debian.org/debian buster/main amd64 node-har-schema all 2.0.0-1 [5254 B]
+Get:179 http://deb.debian.org/debian buster/main amd64 node-har-validator all 5.1.0-1 [4548 B]
+Get:180 http://deb.debian.org/debian buster/main amd64 node-json-schema all 0.2.3-1 [6996 B]
+Get:181 http://deb.debian.org/debian buster/main amd64 node-verror all 1.10.0-1 [13.9 kB]
+Get:182 http://deb.debian.org/debian buster/main amd64 node-jsprim all 1.4.0-1 [13.2 kB]
+Get:183 http://deb.debian.org/debian buster/main amd64 node-sshpk all 1.13.1+dfsg-2 [44.4 kB]
+Get:184 http://deb.debian.org/debian buster/main amd64 node-http-signature all 1.2.0-1 [11.1 kB]
+Get:185 http://deb.debian.org/debian buster/main amd64 node-is-typedarray all 1.0.0-2 [2422 B]
+Get:186 http://deb.debian.org/debian buster/main amd64 node-isstream all 0.1.2+dfsg-1 [3546 B]
+Get:187 http://deb.debian.org/debian buster/main amd64 node-json-stringify-safe all 5.0.1-1 [4124 B]
+Get:188 http://deb.debian.org/debian buster/main amd64 node-oauth-sign all 0.9.0-1 [3676 B]
+Get:189 http://deb.debian.org/debian buster/main amd64 node-performance-now all 2.1.0+debian-1 [4442 B]
+Get:190 http://deb.debian.org/debian buster/main amd64 node-qs all 6.5.2-1 [16.4 kB]
+Get:191 http://deb.debian.org/debian buster/main amd64 node-punycode all 2.1.1-2 [9404 B]
+Get:192 http://deb.debian.org/debian buster/main amd64 node-tough-cookie all 2.3.4+dfsg-1 [56.1 kB]
+Get:193 http://deb.debian.org/debian buster/main amd64 node-tunnel-agent all 0.6.1-1 [4288 B]
+Get:194 http://deb.debian.org/debian buster/main amd64 node-uuid all 3.3.2-2 [18.2 kB]
+Get:195 http://deb.debian.org/debian buster/main amd64 node-node-uuid all 3.3.2-2 [5744 B]
+Get:196 http://deb.debian.org/debian buster/main amd64 node-request all 2.88.1-2 [53.8 kB]
+Get:197 http://deb.debian.org/debian buster/main amd64 node-semver all 5.5.1-1 [23.9 kB]
+Get:198 http://deb.debian.org/debian buster/main amd64 node-tar all 4.4.6+ds1-3 [31.8 kB]
+Get:199 http://deb.debian.org/debian buster/main amd64 node-gyp all 3.8.0-6 [36.9 kB]
+Get:200 http://deb.debian.org/debian buster/main amd64 node-hosted-git-info all 2.7.1-1 [8288 B]
+Get:201 http://deb.debian.org/debian buster/main amd64 node-import-lazy all 3.0.0.REALLY.2.1.0-1 [4000 B]
+Get:202 http://deb.debian.org/debian buster/main amd64 node-invert-kv all 1.0.0-1 [2862 B]
+Get:203 http://deb.debian.org/debian buster/main amd64 node-is-builtin-module all 2.0.0-1 [3156 B]
+Get:204 http://deb.debian.org/debian buster/main amd64 node-is-npm all 1.0.0-1 [2836 B]
+Get:205 http://deb.debian.org/debian buster/main amd64 node-json-parse-better-errors all 1.0.2-2 [5080 B]
+Get:206 http://deb.debian.org/debian buster/main amd64 node-jsonparse all 1.3.1-6 [7012 B]
+Get:207 http://deb.debian.org/debian buster/main amd64 node-through all 2.3.8-1 [4182 B]
+Get:208 http://deb.debian.org/debian buster/main amd64 node-jsonstream all 1.3.2-1 [8092 B]
+Get:209 http://deb.debian.org/debian buster/main amd64 node-minimist all 1.2.0-1 [5588 B]
+Get:210 http://deb.debian.org/debian buster/main amd64 node-strip-json-comments all 2.0.1-2 [4016 B]
+Get:211 http://deb.debian.org/debian buster/main amd64 node-rc all 1.1.6-2 [6058 B]
+Get:212 http://deb.debian.org/debian buster/main amd64 node-registry-url all 3.1.0-1 [3172 B]
+Get:213 http://deb.debian.org/debian buster/main amd64 node-registry-auth-token all 3.3.1-1 [5642 B]
+Get:214 http://deb.debian.org/debian buster/main amd64 node-package-json all 4.0.1-1 [4180 B]
+Get:215 http://deb.debian.org/debian buster/main amd64 node-latest-version all 3.1.0-1 [3128 B]
+Get:216 http://deb.debian.org/debian buster/main amd64 node-lazy-property all 1.0.0-3 [3556 B]
+Get:217 http://deb.debian.org/debian buster/main amd64 node-lcid all 1.0.0-1 [4232 B]
+Get:218 http://deb.debian.org/debian buster/main amd64 node-validate-npm-package-name all 3.0.0-1 [4432 B]
+Get:219 http://deb.debian.org/debian buster/main amd64 node-npm-package-arg all 6.0.0-2 [6752 B]
+Get:220 http://deb.debian.org/debian buster/main amd64 node-require-directory all 2.1.1-1 [5364 B]
+Get:221 http://deb.debian.org/debian buster/main amd64 node-require-main-filename all 1.0.1-1 [3152 B]
+Get:222 http://deb.debian.org/debian buster/main amd64 node-which-module all 2.0.0-1 [3792 B]
+Get:223 http://deb.debian.org/debian buster/main amd64 node-mimic-fn all 1.1.0-1 [3070 B]
+Get:224 http://deb.debian.org/debian buster/main amd64 node-mem all 1.1.0-1 [4076 B]
+Get:225 http://deb.debian.org/debian buster/main amd64 node-os-locale all 2.0.0-1 [3702 B]
+Get:226 http://deb.debian.org/debian buster/main amd64 node-yargs-parser all 11.1.1-1 [16.5 kB]
+Get:227 http://deb.debian.org/debian buster/main amd64 node-yargs all 10.0.3-2 [57.1 kB]
+Get:228 http://deb.debian.org/debian buster/main amd64 node-libnpx all 10.2.0+repack-1 [41.8 kB]
+Get:229 http://deb.debian.org/debian buster/main amd64 node-lockfile all 1.0.4-1 [7272 B]
+Get:230 http://deb.debian.org/debian buster/main amd64 node-mute-stream all 0.0.8-1 [4608 B]
+Get:231 http://deb.debian.org/debian buster/main amd64 node-spdx-license-ids all 1.2.2-1 [4754 B]
+Get:232 http://deb.debian.org/debian buster/main amd64 node-spdx-correct all 1.0.2-1 [3678 B]
+Get:233 http://deb.debian.org/debian buster/main amd64 node-spdx-expression-parse all 1.0.4-1 [12.1 kB]
+Get:234 http://deb.debian.org/debian buster/main amd64 node-validate-npm-package-license all 3.0.1-1 [3442 B]
+Get:235 http://deb.debian.org/debian buster/main amd64 node-normalize-package-data all 2.4.0-1 [10.8 kB]
+Get:236 http://deb.debian.org/debian buster/main amd64 node-opener all 1.4.3-1 [4094 B]
+Get:237 http://deb.debian.org/debian buster/main amd64 node-read all 1.0.7-1 [4540 B]
+Get:238 http://deb.debian.org/debian buster/main amd64 node-promzard all 0.3.0-1 [8964 B]
+Get:239 http://deb.debian.org/debian buster/main amd64 node-qw all 1.0.1-1 [3080 B]
+Get:240 http://deb.debian.org/debian buster/main amd64 node-slash all 1.0.0-1 [2976 B]
+Get:241 http://deb.debian.org/debian buster/main amd64 node-read-package-json all 2.0.13-1 [8388 B]
+Get:242 http://deb.debian.org/debian buster/main amd64 node-resolve-from all 4.0.0-1 [3684 B]
+Get:243 http://deb.debian.org/debian buster/main amd64 node-retry all 0.10.1-1 [7980 B]
+Get:244 http://deb.debian.org/debian buster/main amd64 node-semver-diff all 2.1.0-2 [3356 B]
+Get:245 http://deb.debian.org/debian buster/main amd64 node-sha all 2.0.1-1 [4336 B]
+Get:246 http://deb.debian.org/debian buster/main amd64 node-slide all 1.1.6-2 [6292 B]
+Get:247 http://deb.debian.org/debian buster/main amd64 node-sorted-object all 2.0.1-1 [3686 B]
+Get:248 http://deb.debian.org/debian buster/main amd64 node-stream-iterate all 1.2.0-4 [3736 B]
+Get:249 http://deb.debian.org/debian buster/main amd64 node-text-table all 0.2.0-2 [4308 B]
+Get:250 http://deb.debian.org/debian buster/main amd64 node-uid-number all 0.0.6-1 [3068 B]
+Get:251 http://deb.debian.org/debian buster/main amd64 node-unpipe all 1.0.0-1 [3582 B]
+Get:252 http://deb.debian.org/debian buster/main amd64 node-write-file-atomic all 2.3.0-1 [4878 B]
+Get:253 http://deb.debian.org/debian buster/main amd64 node-xdg-basedir all 3.0.0-1 [3660 B]
+Err:254 http://deb.debian.org/debian buster/main amd64 npm all 5.8.0+ds6-4
+  404  Not Found [IP: 151.101.8.204 80]
+Fetched 2944 kB in 18s (163 kB/s)
+[91mE: Failed to fetch http://security.debian.org/debian-security/pool/updates/main/n/nodejs/libnode64_10.19.0~dfsg1-1_amd64.deb  404  Not Found [IP: 151.101.8.204 80]
+E: Failed to fetch http://security.debian.org/debian-security/pool/updates/main/n/nodejs/libnode-dev_10.19.0~dfsg1-1_amd64.deb  404  Not Found [IP: 151.101.8.204 80]
+E: Failed to fetch http://security.debian.org/debian-security/pool/updates/main/n/nodejs/nodejs_10.19.0~dfsg1-1_amd64.deb  404  Not Found [IP: 151.101.8.204 80]
+E: Failed to fetch http://security.debian.org/debian-security/pool/updates/main/n/nodejs/nodejs-doc_10.19.0~dfsg1-1_all.deb  404  Not Found [IP: 151.101.8.204 80]
+E: Failed to fetch http://deb.debian.org/debian/pool/main/n/npm/npm_5.8.0+ds6-4_all.deb  404  Not Found [IP: 151.101.8.204 80]
+E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?
+[0mdata4
+https://developers.kite.trade/create?request_token=SuzS12jx7frkL51sUyCJ6VWQk3SOgM4P&action=login&status=success
+SuzS12jx7frkL51sUyCJ6VWQk3SOgM4P
+Total reclaimed space: 0B
+Deleted Containers:
+c1ba5b5295dab0051a61870d44b868f4e001b451df043a2d9d3b5a4bc230a33a
+3acefbc9f43bf3243e529f33d7a2f4869a9ea88bf0f42a9f56347e778d591ae3
+
+Total reclaimed space: 5.279MB
+data4
+({'date': datetime.date(2020, 7, 10), 'access_token': '4zEh2lW37WdwqsolTDnWf2g8E6eFgfVU', 'request_token': 'SuzS12jx7frkL51sUyCJ6VWQk3SOgM4P'}, <kiteconnect.connect.KiteConnect object at 0x7fbac5ad0470>)

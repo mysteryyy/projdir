@@ -1,0 +1,134 @@
+\documentclass[runningheads,a4paper,12pt]{report}
+\usepackage{graphicx,color,verbatim}
+\usepackage{amsmath,amssymb,cite,tabularx,booktabs}
+\usepackage{algorithmic, algorithm}
+\usepackage{appendix}
+\usepackage[pdftex,bookmarks=true]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{pdfpages}
+%\usepackage{StyleFiles/watermark}
+
+%====Page Setting==========
+\setlength{\topmargin}{-0.4in}
+\setlength{\topskip}{-3in}    			% between header and text
+\setlength{\textheight}{9.5in} 	  	% height of main text
+\setlength{\textwidth}{5.5in}     	% width of text
+\setlength{\oddsidemargin}{0.75in} 	% odd page left margin
+\setlength{\evensidemargin}{0.75in} % even page left margin
+\renewcommand{\baselinestretch}{1.66}
+%\pagestyle{myheadings}
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+
+
+\begin{document}
+
+%=========Title Page==============
+
+
+\begin{titlepage}
+	\begin{center}
+	\large{\textbf{Your Project Title}}
+	\end{center}
+	
+	\begin{center}
+	\small{\textit{A project report submitted} \\ \textit{to} \\\textbf{MANIPAL ACADEMY OF HIGHER EDUCATION} \\}
+	\end{center}
+	
+%	\begin{figure}[h]
+%	\begin{center}
+
+%	\includegraphics[height=2.5cm]{mu}
+%	\end{center}
+%	\end{figure}	%
+	\vspace{-0.5cm}
+	\begin{center}
+	\small{\textit{For Partial Fulfillment of the Requirement for the\\ Award of the Degree\\of}} \\
+	\textbf{Bachelor of Technology} \\ \textit{in} \\ \textbf{Information Technology}
+	\end{center}
+	
+	\begin{center}
+	\small{\textit{by}} \\
+	\textbf{Your Name(s)} \\ \textbf{Reg. No. 160911xxx} \\
+	\end{center}
+
+	\begin{center}
+	\small{\textit{Under the guidance of}} \\
+\renewcommand{\baselinestretch}{1}
+%{	
+\begin{table}[h]
+	\centering
+		\begin{tabular}{p{3in} p{3in}}
+			Dr.XYZ (Name of Internal Guide) &  Dr.ABC (Name of External Guide)  \\
+			Designation of Internal Guide &    Designation of External Guide \\
+			Department of I \& CT  &  Project Group Name/Department Name (if any) \\
+			 Manipal Institute of Technology& Company name \\
+			Manipal, India &  Company Address 
+		\end{tabular}
+\end{table}
+%}
+	\end{center}
+	\begin{figure}[h]
+  \begin{center}
+	%\includegraphics[height=2.8cm]{MITLogoNew}
+	\includegraphics[scale=1]{MITLogo}
+	\end{center}
+	\end{figure}
+	\begin{center}
+	\textbf{MAY 2020}
+	\end{center}
+\end{titlepage}
+%===========End of Title Page===========================
+
+%\pagenumbering{roman}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+\pagenumbering{roman}
+\include{Dedication/dedication}
+\include{Declaration/declaration}
+\include{Certificate/certificate}
+\include{CertificateCompany/certificate} 
+\addcontentsline{toc}{chapter}{Acknowledgements}
+\include{Acknowledgements/ack}
+\addcontentsline{toc}{chapter}{Abstract}
+\include{Abstract/abstract}
+\tableofcontents
+\listoftables
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+\addcontentsline{toc}{chapter}{Abbreviations}
+\include{Abbreviations/loa}
+\addcontentsline{toc}{chapter}{Notations}
+\include{Notation/notations}
+
+\pagenumbering{arabic}
+\include{Chapter1/ch1}
+\include{Chapter2/ch2}
+\include{Chapter3/ch3}
+\include{Chapter4/ch4}
+\include{Chapter5/ch5}
+\include{Chapter6/ch6}
+
+\addappheadtotoc
+\appendixpage
+\include{Appendix/appendix}
+
+
+\addcontentsline{toc}{chapter}{References}
+\renewcommand{\bibname}{References} % changes default name Bibliography to References
+\bibliographystyle{IEEEtran} % bibliography style
+\bibliography{References/myref} % References file
+
+\rhead{}
+\addcontentsline{toc}{chapter}{ProjectDetail}
+\include{ProjectDetail/PD}
+\includepdf{OriginalityReport/OR}
+\includepdf{ProjectOfferLetter/POL}
+
+\end{document}
+
