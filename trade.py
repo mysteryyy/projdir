@@ -1,6 +1,6 @@
 from datetime import datetime
 import datetime
-from bs4 import BeautifulSoup as bsoap
+#from bs4 import BeautifulSoup as bsoap
 import re
 import os
 os.chdir('/home/sahil/projdir')
