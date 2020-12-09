@@ -25,7 +25,7 @@ import os
 
 driver = webdriver.Chrome('/usr/bin/chromedriver',options=options)
 apikey='*******'
-apisecret='*********
+apisecret='*********'
 kite = KiteConnect(api_key=apikey)
 driver.get(kite.login_url())
 driver.implicitly_wait(6)

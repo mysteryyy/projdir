@@ -52,10 +52,12 @@ r1=kite.margins()['equity']['net']
 def stream():
     global tq
     global r1
+    global k
     tq=0
-    def qcalc(tr,marg,open,div=6,r1=r1):
+    def qcalc(tr,marg,open,div=len(k),r1=r1):
       global tq  
       q = round((2*r1)/(abs(tr)*div*open))
+      print(q)
       tq+= (q*open)*marg
       if(tq>r1):
             q = 0
