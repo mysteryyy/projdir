@@ -32,7 +32,7 @@ logging.basicConfig(level=logging.DEBUG)
 #h=pd.concat([pd.DataFrame(i,index=[j]) for i,j in zip(h,range(len(h)))])
 #
 # Initialise
-apikey="*******"
+apikey="y931xfwky24zn2l5"
 apisecret="*********"
 in1 = pck.load(open('initials_today.pkl','rb'))
 #kite = KiteConnect(api_key=apikey)
