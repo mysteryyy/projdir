@@ -23,8 +23,6 @@
 *.swu
 *.swv
 *.swx
-*.swz
 *.pyc
-*.svz
 *.gz
 *.env
