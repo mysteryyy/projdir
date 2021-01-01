@@ -48,7 +48,7 @@ kite = pck.load(open('kite.obj','rb'))
 kws = KiteTicker(apikey,in1["access_token"])
 tck=[]
 tq=0
-r1=kite.margins()['equity']['net']
+r1=kite.margins()['equity']['net']/6
 def stream():
     global tq
     global r1
@@ -72,21 +72,48 @@ def stream():
         orderid=[]
         for i in ticks:
             k1 = k[k.tokens==i['instrument_token']]
-            sl = k1.psl.values[0] if k1.prediction.values[0]>0 else k1.nsl.values[0]
+            #sl = k1.psl.values[0] if k1.prediction.values[0]>0 else k1.nsl.values[0]
             trans= kite.TRANSACTION_TYPE_BUY  if k1.prediction.values[0]>0 else kite.TRANSACTION_TYPE_SELL
+            trans_close =kite.TRANSACTION_TYPE_SELL if k1.prediction.values[0]>0 else kite.TRANSACTION_TYPE_BUY
+ 
+            if(k1.exchange.values[0]=='BSE'):
+                exch = kite.EXCHANGE_BSE
+            else:
+                exch = kite.EXCHANGE_NSE
+
+            sl = k1.nsl.values[0]
+            tp = k1.psl.values[0]
             m = k1.margins.values[0]
-            quant=int(qcalc(sl,m,i['last_price']))
+            quant=int(qcalc(sl,m,i['last_price'],k1.weights.values[0]))
             print(quant)
             tried=0
             tick=k1.tick.values[0]
             slp =round((abs(sl)/100)*i['last_price'],2) 
-            trig = i['last_price']-slp if k1.prediction.values[0]>0 else i['last_price']+slp
-            trig = trig-trig%tick
+            tpp =round((abs(tp)/100)*i['last_price'],2) 
+            trigsl = i['last_price']-slp if k1.prediction.values[0]>0 else i['last_price']+slp
+            trigtp = i['last_price']+tpp if k1.prediction.values[0]>0 else i['last_price']-tpp
+            trigtp = trigtp-trigtp%tick
+            print('take profit ',trigtp)
+            trigsl = trigsl-trigsl%tick
+            print('stop loss ',trigsl)
             while(tried<3):
                 try:
-                    order_id1=kite.place_order(tradingsymbol=k1.Symbol.values[0],exchange=kite.EXCHANGE_NSE,transaction_type=trans,
-                    quantity=quant,order_type = kite.ORDER_TYPE_MARKET,variety=kite.VARIETY_CO,
-                    product=kite.PRODUCT_MIS,trigger_price=trig)
+                    #Entry Order
+                    order_id1=kite.place_order(tradingsymbol=k1.Symbol.values[0],exchange=exch,transaction_type=trans,
+                        quantity=quant,order_type = kite.ORDER_TYPE_MARKET,variety=kite.VARIETY_CO,
+                    product=kite.PRODUCT_MIS,trigger_price=trigsl)
+                    #Exit Orders
+                    #order_id2=kite.place_order(tradingsymbol=k1.Symbol.values[0],exchange=exch,transaction_type=trans_close,
+                    #quantity=quant,order_type = kite.ORDER_TYPE_LIMIT,variety=kite.VARIETY_REGULAR,
+                    #product=kite.PRODUCT_MIS,trigger_price=trigtp,validity=kite.VALIDITY_DAY)
+#                   # 
+#                    order_id3=kite.place_order(tradingsymbol=k1.Symbol.values[0],exchange=exch,transaction_type=trans_close,
+#                    quantity=quant,order_type = kite.ORDER_TYPE_LIMIT,variety=kite.VARIETY_REGULAR,
+#                    product=kite.PRODUCT_MIS,trigger_price=trigtp)
+#
+#
+#
+                    
                     orderid.append(order_id1)
                     break
                 except Exception as e:
