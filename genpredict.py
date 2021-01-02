@@ -27,7 +27,7 @@ h=pd.concat([pd.DataFrame(i,index=[j]) for i,j in zip(h,range(len(h)))])
 
 k = pd.DataFrame(columns = ['Symbol','prediction','psl','nsl','tokens','margins','tick','weights'])
 k1 = pd.read_pickle('/home/sahil/projdir/instrumentdetails.pkl')
-def gen_pred_file(symb,psl,nsl,pred,marg,w):
+def gen_pred_file(symb,psl,nsl,pred,w):
     global k
     info=dict()
     k11 = k1[k1.tradingsymbol==symb]
@@ -46,7 +46,7 @@ def gen_pred_file(symb,psl,nsl,pred,marg,w):
     print(info)
     k = k.append(info,ignore_index=True)
     return k
-k=gen_pred_file('AARTIIND',1,-.4,1,.1,1)
+k=gen_pred_file('AARTIIND',1,-.4,1,1)
 filepath='/home/sahil/projdir/todays_prediction.pkl'
 if (os.path.exists(filepath)):
     os.remove(filepath)
