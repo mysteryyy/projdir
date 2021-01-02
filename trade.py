@@ -88,20 +88,31 @@ def stream():
             print(quant)
             tried=0
             tick=k1.tick.values[0]
-            slp =round((abs(sl)/100)*i['last_price'],2) 
-            tpp =round((abs(tp)/100)*i['last_price'],2) 
-            trigsl = i['last_price']-slp if k1.prediction.values[0]>0 else i['last_price']+slp
-            trigtp = i['last_price']+tpp if k1.prediction.values[0]>0 else i['last_price']-tpp
-            trigtp = trigtp-trigtp%tick
-            print('take profit ',trigtp)
-            trigsl = trigsl-trigsl%tick
-            print('stop loss ',trigsl)
+            price =  i['last_price']+2*tick
+            slp =round((abs(sl)/100)*price,2) 
+            tpp =round((abs(tp)/100)*price,2) 
+            slp = slp-slp%tick
+            tpp = tpp-tpp%tick
+            #trigsl = i['last_price']-slp if k1.prediction.values[0]>0 else i['last_price']+slp
+            #trigtp = i['last_price']+tpp if k1.prediction.values[0]>0 else i['last_price']-tpp
+            #trigtp = trigtp-trigtp%tick
+            #print('take profit ',trigtp)
+            #trigsl = trigsl-trigsl%tick
+            #print('stop loss ',trigsl)
             while(tried<3):
                 try:
                     #Entry Order
-                    order_id1=kite.place_order(tradingsymbol=k1.Symbol.values[0],exchange=exch,transaction_type=trans,
-                        quantity=quant,order_type = kite.ORDER_TYPE_MARKET,variety=kite.VARIETY_CO,
-                    product=kite.PRODUCT_MIS,trigger_price=trigsl)
+                    #order_id1=kite.place_order(tradingsymbol=k1.Symbol.values[0],exchange=exch,transaction_type=trans,
+                    #    quantity=quant,order_type = kite.ORDER_TYPE_MARKET,variety=kite.VARIETY_CO,
+                    #product=kite.PRODUCT_MIS,trigger_price=trigsl)
+
+                    #Bracket Order
+                    order_id1=kite.place_order(price=price,tradingsymbol=k1.Symbol.values[0],exchange=exch,transaction_type=trans,
+                        quantity=quant,order_type = kite.ORDER_TYPE_LIMIT,variety=kite.VARIETY_BO,
+                    product=kite.PRODUCT_BO,stoploss=slp,squareoff=tpp)
+
+                    
+
                     #Exit Orders
                     #order_id2=kite.place_order(tradingsymbol=k1.Symbol.values[0],exchange=exch,transaction_type=trans_close,
                     #quantity=quant,order_type = kite.ORDER_TYPE_LIMIT,variety=kite.VARIETY_REGULAR,
