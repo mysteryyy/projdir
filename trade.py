@@ -106,13 +106,13 @@ def stream():
                     #product=kite.PRODUCT_MIS,trigger_price=trigsl)
                     ##
                     order_id1=kite.place_order(tradingsymbol=k1.Symbol.values[0],exchange=exch,transaction_type=trans,
-                        quantity=quant,order_type = kite.ORDER_TYPE_MARKET,variety=kite.VARIETY_CO,
-                    product=kite.PRODUCT_MIS,trigger_price=trigsl)
+                        quantity=quant,order_type = kite.ORDER_TYPE_MARKET,variety=kite.VARIETY_REGULAR,
+                    product=kite.PRODUCT_MIS)
 
                     #Exit Orders
-                    #order_id2=kite.place_order(tradingsymbol=k1.Symbol.values[0],exchange=exch,transaction_type=trans_close,
-                    #quantity=quant,order_type = kite.ORDER_TYPE_SL-M,variety=kite.VARIETY_REGULAR,
-                    #product=kite.PRODUCT_MIS,price=trigsl,validity=kite.VALIDITY_DAY)
+                    order_id2=kite.place_order(tradingsymbol=k1.Symbol.values[0],exchange=exch,transaction_type=trans_close,
+                    quantity=quant,order_type = kite.ORDER_TYPE_SL,variety=kite.VARIETY_REGULAR,
+                    product=kite.PRODUCT_MIS,trigger_price=trigsl,validity=kite.VALIDITY_DAY)
 #                    
                     order_id3=kite.place_order(tradingsymbol=k1.Symbol.values[0],exchange=exch,transaction_type=trans_close,
                     quantity=quant,order_type = kite.ORDER_TYPE_LIMIT,variety=kite.VARIETY_REGULAR,
