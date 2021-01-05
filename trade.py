@@ -48,7 +48,7 @@ kite = pck.load(open('kite.obj','rb'))
 kws = KiteTicker(apikey,in1["access_token"])
 tck=[]
 tq=0
-r1=kite.margins()['equity']['net']/6
+r1=kite.margins()['equity']['net']/9
 def stream():
     global tq
     global r1
@@ -99,6 +99,7 @@ def stream():
             trigsl=round(trigsl,2)
             print('stop loss ',trigsl)
             while(tried<3):
+
                 try:
                     #Entry Order
                     ##Cover order
@@ -113,7 +114,7 @@ def stream():
                     #Exit Orders
                     order_id2=kite.place_order(tradingsymbol=k1.Symbol.values[0],exchange=exch,transaction_type=trans_close,
                     quantity=quant,order_type = kite.ORDER_TYPE_SLM,variety=kite.VARIETY_REGULAR,
-                    product=kite.PRODUCT_MIS,price=trigsl,validity=kite.VALIDITY_DAY)
+                    product=kite.PRODUCT_MIS,trigger_price=trigsl,validity=kite.VALIDITY_DAY)
 #                    
                     order_id3=kite.place_order(tradingsymbol=k1.Symbol.values[0],exchange=exch,transaction_type=trans_close,
                     quantity=quant,order_type = kite.ORDER_TYPE_LIMIT,variety=kite.VARIETY_REGULAR,

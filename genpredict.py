@@ -39,7 +39,7 @@ def gen_pred_file(symb,psl,nsl,pred,marg,w):
     info['nsl'] = nsl
     info['margins'] = h[h.tradingsymbol==symb].mis_margin.values[0]/100 
     info['weights'] = w
-    if (len(k11.exchange.values[0])>1):
+    if (len(k11.exchange.values)>1):
       info['exchange'] = k11.exchange.values[1]
     else:
       info['exchange'] = k11.exchange.values[0]
