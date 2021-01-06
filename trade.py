@@ -112,10 +112,12 @@ def stream():
                     product=kite.PRODUCT_MIS)
 
                     #Exit Orders
-                    order_id2=kite.place_order(tradingsymbol=k1.Symbol.values[0],exchange=exch,transaction_type=trans_close,
-                    quantity=quant,order_type = kite.ORDER_TYPE_SLM,variety=kite.VARIETY_REGULAR,
-                    product=kite.PRODUCT_MIS,trigger_price=trigsl,validity=kite.VALIDITY_DAY)
-#                    
+                    try:
+                        order_id2=kite.place_order(tradingsymbol=k1.Symbol.values[0],exchange=exch,transaction_type=trans_close,
+                        quantity=quant,order_type = kite.ORDER_TYPE_SLM,variety=kite.VARIETY_REGULAR,
+                        product=kite.PRODUCT_MIS,trigger_price=trigsl,validity=kite.VALIDITY_DAY)
+                    except Exception as e:
+                        os.system('python3 exitorder.py')
                     order_id3=kite.place_order(tradingsymbol=k1.Symbol.values[0],exchange=exch,transaction_type=trans_close,
                     quantity=quant,order_type = kite.ORDER_TYPE_LIMIT,variety=kite.VARIETY_REGULAR,
                     product=kite.PRODUCT_MIS,price=trigtp)
