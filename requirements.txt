@@ -80,6 +80,7 @@ matplotlib==3.3.3
 mccabe==0.6.1
 mle==0.0.5
 monotonic==1.5
+multitasking==0.0.9
 netCDF4==1.5.4
 netifaces==0.10.4
 nolds==0.5.2
@@ -173,4 +174,5 @@ wmctrl==0.3
 wrapt==1.12.1
 xarray==0.16.1
 xkit==0.0.0
+yfinance==0.1.55
 zope.interface==5.2.0
