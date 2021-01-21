@@ -46,7 +46,7 @@ def gen_pred_file(symb,psl,nsl,pred,marg,w):
     print(info)
     k = k.append(info,ignore_index=True)
     return k
-k=gen_pred_file('AARTIIND',2,-1,1,.1,1)
+k=gen_pred_file('AARTIIND',2,-1,-1,.1,1)
 filepath='/home/sahil/projdir/todays_prediction.pkl'
 if (os.path.exists(filepath)):
     os.remove(filepath)
