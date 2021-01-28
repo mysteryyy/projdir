@@ -1,3 +1,4 @@
+2to3==1.0
 absl-py==0.11.0
 apturl==0.5.2
 arch==4.15
@@ -59,7 +60,7 @@ incremental==17.5.0
 investpy==1.0
 jeepney==0.4.3
 joblib==0.17.0
-julia==0.5.6
+julia @ file:///home/sahil/pythonbackup/pyjulia
 Keras-Preprocessing==1.1.2
 keyring==21.3.0
 kiteconnect==3.9.0
