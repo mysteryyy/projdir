@@ -53,6 +53,7 @@ gvar==11.8
 gyp==0.1
 h5py==2.10.0
 httplib2==0.18.1
+hurst==0.0.5
 hyperlink==20.0.1
 i3ipc==2.2.1
 idna==2.10
