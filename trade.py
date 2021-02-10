@@ -37,7 +37,7 @@ logging.basicConfig(level=logging.DEBUG)
 # Initialise
 apikey="y931xfwky24zn2l5"
 apisecret="*********"
-in1 = pck.load-(open('initials_today.pkl','rb'))
+in1 = pck.load(open('initials_today.pkl','rb'))
 def datestring(dt):
     day=dt.date().day
     month=dt.date().month
