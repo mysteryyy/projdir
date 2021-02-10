@@ -22,6 +22,9 @@ import pickle as pck
 import sys
 import requests
 import json
+import datetime
+from  datetime import timedelta
+import investpy
 options = webdriver.ChromeOptions()
 options.add_argument('--headless')
 options.add_argument('--no-sandbox')
@@ -34,7 +37,17 @@ logging.basicConfig(level=logging.DEBUG)
 # Initialise
 apikey="y931xfwky24zn2l5"
 apisecret="*********"
-in1 = pck.load(open('initials_today.pkl','rb'))
+in1 = pck.load-(open('initials_today.pkl','rb'))
+def datestring(dt):
+    day=dt.date().day
+    month=dt.date().month
+    year=dt.date().year
+    strdate = str(day)+'/'+str(month)+'/'+str(year)
+    return strdate
+today = datestring(datetime.datetime.now())
+startday = datestring(datetime.datetime.now()-timedelta(days=5))
+k1=investpy.search_quotes(text='AARTIIND',products=['stocks'],countries=['India'],n_results=2)[0].retrieve_historical_data(from_date=startday,to_date=today)
+
 #kite = KiteConnect(api_key=apikey)
 
 # Redirect the user to the login url obtained
