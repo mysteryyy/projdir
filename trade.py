@@ -47,7 +47,7 @@ def datestring(dt):
 today = datestring(datetime.datetime.now())
 startday = datestring(datetime.datetime.now()-timedelta(days=5))
 k1=investpy.search_quotes(text='AARTIIND',products=['stocks'],countries=['India'],n_results=2)[0].retrieve_historical_data(from_date=startday,to_date=today)
-
+price = k1.Close.iloc[-1]
 #kite = KiteConnect(api_key=apikey)
 
 # Redirect the user to the login url obtained
@@ -84,6 +84,9 @@ def stream():
         tck = ticks
         orderid=[]
         for i in ticks:
+            if(i['last_price']<=price):
+                print("exiting because there is no gap")
+                sys.exit()
             k1 = k[k.tokens==i['instrument_token']]
             #sl = k1.psl.values[0] if k1.prediction.values[0]>0 else k1.nsl.values[0]
             trans= kite.TRANSACTION_TYPE_BUY  if k1.prediction.values[0]>0 else kite.TRANSACTION_TYPE_SELL
