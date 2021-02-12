@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime,timedelta
 import datetime
 #from bs4 import BeautifulSoup as bsoap
 import re
@@ -21,17 +21,32 @@ from extractcode import trading_codes
 import pickle as pck
 import sys
 import requests
+import investpy
 import json
 h = requests.get('https://api.kite.trade/margins/equity').json()
 h=pd.concat([pd.DataFrame(i,index=[j]) for i,j in zip(h,range(len(h)))])
 
 k = pd.DataFrame(columns = ['Symbol','prediction','psl','nsl','tokens','margins','tick','weights'])
 k1 = pd.read_pickle('/home/sahil/projdir/instrumentdetails.pkl')
+def datestring(dt):
+    day=dt.date().day
+    month=dt.date().month
+    year=dt.date().year
+    strdate = str(day)+'/'+str(month)+'/'+str(year)
+    return strdate
+def getprice(symb):
+    today = datestring(datetime.datetime.now())
+    startday = datestring(datetime.datetime.now()-timedelta(days=5))
+    k1=investpy.search_quotes(text=symb,products=['stocks'],countries=['India'],n_results=2)[0].retrieve_historical_data(from_date=startday,to_date=today)
+    price = k1.Close.iloc[-1]
+    return price
+    #
 def gen_pred_file(symb,psl,nsl,pred,marg,w):
     global k
     info=dict()
     k11 = k1[k1.tradingsymbol==symb]
     info['Symbol'] = symb
+    info['price'] = getprice(symb)
     info['prediction'] = pred
     info['tokens']= k11.instrument_token.values[0]
     info['tick'] = k11.tick_size.values[0]

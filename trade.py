@@ -38,17 +38,7 @@ logging.basicConfig(level=logging.DEBUG)
 apikey="y931xfwky24zn2l5"
 apisecret="*********"
 in1 = pck.load(open('initials_today.pkl','rb'))
-def datestring(dt):
-    day=dt.date().day
-    month=dt.date().month
-    year=dt.date().year
-    strdate = str(day)+'/'+str(month)+'/'+str(year)
-    return strdate
-today = datestring(datetime.datetime.now())
-startday = datestring(datetime.datetime.now()-timedelta(days=5))
-k1=investpy.search_quotes(text='AARTIIND',products=['stocks'],countries=['India'],n_results=2)[0].retrieve_historical_data(from_date=startday,to_date=today)
-price = k1.Close.iloc[-1]
-#kite = KiteConnect(api_key=apikey)
+kite = KiteConnect(api_key=apikey)
 
 # Redirect the user to the login url obtained
 # from kite.login_url(), and receive the request_token
@@ -56,6 +46,7 @@ price = k1.Close.iloc[-1]
 # Once you have the request_token, obtain the access_token
 # as follows.
 k = pd.read_pickle('todays_prediction.pkl')
+price = k.price.iloc[-1]
 tok = list(k.tokens)
 kite = pck.load(open('kite.obj','rb'))
 kws = KiteTicker(apikey,in1["access_token"])
@@ -134,9 +125,9 @@ def stream():
                         product=kite.PRODUCT_MIS,trigger_price=trigsl,validity=kite.VALIDITY_DAY)
                     except Exception as e:
                         os.system('python3 exitorder.py')
-                    #order_id3=kite.place_order(tradingsymbol=k1.Symbol.values[0],exchange=exch,transaction_type=trans_close,
-                    #quantity=quant,order_type = kite.ORDER_TYPE_LIMIT,variety=kite.VARIETY_REGULAR,
-                    #product=kite.PRODUCT_MIS,price=trigtp)
+                    order_id3=kite.place_order(tradingsymbol=k1.Symbol.values[0],exchange=exch,transaction_type=trans_close,
+                    quantity=quant,order_type = kite.ORDER_TYPE_LIMIT,variety=kite.VARIETY_REGULAR,
+                    product=kite.PRODUCT_MIS,price=trigtp)
 #
 #
 #
