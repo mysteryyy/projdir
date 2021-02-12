@@ -60,7 +60,7 @@ def stream():
     tq=0
     def qcalc(tr,marg,open,w,r1=r1):
       global tq  
-      q = round((2*w*r1)/(abs(tr)*open))
+      q = round((4*w*r1)/(abs(tr)*open))
       print(q)
       tq+= (q*open)*marg
       if(tq>r1):
