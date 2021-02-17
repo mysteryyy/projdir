@@ -45,6 +45,7 @@ kite = KiteConnect(api_key=apikey)
 # from the registered redirect url after the login flow.
 # Once you have the request_token, obtain the access_token
 # as follows.
+
 k = pd.read_pickle('todays_prediction.pkl')
 price = k.price.iloc[-1]
 tok = list(k.tokens)
@@ -53,6 +54,16 @@ kws = KiteTicker(apikey,in1["access_token"])
 tck=[]
 tq=0
 r1=kite.margins()['equity']['net']/6
+order_id = kite.place_order(
+        variety=kite.VARIETY_REGULAR,
+        exchange=kite.EXCHANGE_NSE,
+        tradingsymbol="ZEEL",
+        transaction_type=kite.TRANSACTION_TYPE_BUY,
+        quantity=1,
+        product=kite.PRODUCT_MIS,
+        order_type=kite.ORDER_TYPE_MARKET
+    )
+
 def stream():
     global tq
     global r1
