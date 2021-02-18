@@ -63,7 +63,7 @@ order_id = kite.place_order(
         product=kite.PRODUCT_MIS,
         order_type=kite.ORDER_TYPE_MARKET
     )
-
+sys.exit()
 def stream():
     global tq
     global r1
