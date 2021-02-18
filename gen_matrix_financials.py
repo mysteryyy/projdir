@@ -146,7 +146,7 @@ datetime.date(2017,1,1),kk1)
 xts1,yts1 = extarr(datetime.date(2017,1,1),
 datetime.date(2018,1,1),kk1)
 xts2,yts2 = extarr(datetime.date(2018,1,1),
-datetime.date(2019,1,1),kk1)
+datetime.date(2020,1,1),kk1)
 def validprepare(x,y):
     xtr,xts,ytr,yts = train_test_split(x,y,test_size=0.3,random_state=150)
     xts1,xts2,yts1,yts2 =  train_test_split(xts,yts,test_size=0.5,random_state=150)
