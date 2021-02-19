@@ -39,14 +39,15 @@ def getprice(symb):
     startday = datestring(datetime.datetime.now()-timedelta(days=5))
     k1=investpy.search_quotes(text=symb,products=['stocks'],countries=['India'],n_results=2)[0].retrieve_historical_data(from_date=startday,to_date=today)
     price = k1.Close.iloc[-1]
-    return price
+    return price,k1
     #
 def gen_pred_file(symb,psl,nsl,pred,marg,w):
     global k
+    global kcheck
     info=dict()
     k11 = k1[k1.tradingsymbol==symb]
     info['Symbol'] = symb
-    info['price'] = getprice(symb)
+    info['price'],kcheck = getprice(symb)
     info['prediction'] = pred
     info['tokens']= k11.instrument_token.values[0]
     info['tick'] = k11.tick_size.values[0]

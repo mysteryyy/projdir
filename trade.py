@@ -58,12 +58,11 @@ order_id = kite.place_order(
         variety=kite.VARIETY_REGULAR,
         exchange=kite.EXCHANGE_NSE,
         tradingsymbol="ZEEL",
-        transaction_type=kite.TRANSACTION_TYPE_BUY,
+        transaction_type=kite.TRANSACTION_TYPE_SELL,
         quantity=1,
         product=kite.PRODUCT_MIS,
         order_type=kite.ORDER_TYPE_MARKET
     )
-sys.exit()
 def stream():
     global tq
     global r1
