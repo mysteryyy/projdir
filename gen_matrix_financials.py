@@ -129,6 +129,7 @@ xtr=[[]]
 ytr=[]
 xts=[[]]
 yts=[]
+kk1=kk1.fillna(0)
 kk1['date'] = pd.to_datetime(kk1.index)
 def extarr(start,end,kk1):
     kk1 = kk1[(kk1.date>=start)&(kk1.date<=end)]
@@ -149,8 +150,8 @@ xts2,yts2 = extarr(datetime.date(2018,1,1),
 datetime.date(2020,1,1),kk1)
 def validprepare(x,y):
     xtr,xts,ytr,yts = train_test_split(x,y,test_size=0.3,random_state=150)
-    xts1,xts2,yts1,yts2 =  train_test_split(xts,yts,test_size=0.5,random_state=150)
-    return xtr,xts,ytr,yts,xts1,xts2,yts1,yts2
+    #xts1,xts2,yts1,yts2 =  train_test_split(xts,yts,test_size=0.5,random_state=150)
+    return xtr,xts,ytr,yts
 x,y=extarr(datetime.date(2000,1,1),datetime.date(2019,1,1),kk1)
 np.save('xquarterly.npy',x)
 np.save('yquarterly.npy',y)
