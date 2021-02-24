@@ -98,7 +98,6 @@ def stream():
             tick=k1.tick.values[0]
             slp =round((abs(sl)/100)*i['last_price'],2) 
             tpp =round((abs(tp)/100)*i['last_price'],2) 
-            tpp=tpp-tpp%tick
             trigsl = i['last_price']-slp if k1.prediction.values[0]>0 else i['last_price']+slp
             trigtp = i['last_price']+tpp if k1.prediction.values[0]>0 else i['last_price']-tpp
             trigtp = trigtp-trigtp%tick
