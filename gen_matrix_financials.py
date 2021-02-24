@@ -124,7 +124,7 @@ def norm(kk1):
      p = kk1[i]
      kk1[i] = (p-p.min())/(p.max()-p.min())
     return kk1
-kk1 = norm(kk1)
+#kk1 = norm(kk1)
 xtr=[[]]
 ytr=[]
 xts=[[]]
