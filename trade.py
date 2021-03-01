@@ -54,7 +54,6 @@ kws = KiteTicker(apikey,in1["access_token"])
 tck=[]
 tq=0
 r1=kite.margins()['equity']['net']/6
-r1=1000/2
 def stream():
     global tq
     global r1
