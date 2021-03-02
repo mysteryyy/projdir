@@ -1,0 +1,17 @@
+{
+    "name": "Ensemble_Stacked",
+    "ml_task": "binary_classification",
+    "optimize_metric": "logloss",
+    "selected_models": [
+        {
+            "model": "Ensemble",
+            "repeat": 1.0
+        }
+    ],
+    "predictions_fname": "Ensemble_Stacked/predictions_ensemble.csv",
+    "metric_name": "logloss",
+    "final_loss": 0.5326327439884673,
+    "train_time": 3.7277419567108154,
+    "is_stacked": true,
+    "threshold": 0.4331164076686786
+}

@@ -1,0 +1,22 @@
+name,model_type,metric_type,metric_value,train_time
+1_DecisionTree,Decision Tree,logloss,0.5533032204802892,2.52
+2_DecisionTree,Decision Tree,logloss,0.56897133720649,2.52
+3_DecisionTree,Decision Tree,logloss,0.5681463092424768,2.5
+4_Linear,Linear,logloss,0.6079399699492289,6.18
+5_Default_LightGBM,LightGBM,logloss,0.5476307368838618,7.38
+6_Default_Xgboost,Xgboost,logloss,0.5457962812457486,13.05
+7_Default_CatBoost,CatBoost,logloss,0.5370945999321616,13.32
+8_Default_NeuralNetwork,Neural Network,logloss,0.6100061453762307,7.7
+9_Default_RandomForest,Random Forest,logloss,0.5357058795664832,23.91
+10_Default_ExtraTrees,Extra Trees,logloss,0.5925865557804529,15.15
+11_Default_NearestNeighbors,Nearest Neighbors,logloss,1.1353630877247842,3.45
+21_LightGBM,LightGBM,logloss,0.5395966211780698,3.8
+12_Xgboost,Xgboost,logloss,0.5446754518586348,13.91
+30_CatBoost,CatBoost,logloss,0.5371665780815396,39.37
+39_RandomForest,Random Forest,logloss,0.5346036530598043,21.72
+48_ExtraTrees,Extra Trees,logloss,0.6003901638796526,11.04
+57_NeuralNetwork,Neural Network,logloss,0.6105074622210883,7.25
+66_NearestNeighbors,Nearest Neighbors,logloss,0.8576714858944107,3.52
+22_LightGBM,LightGBM,logloss,0.5586486520238537,4.71
+13_Xgboost,Xgboost,logloss,0.5524224353728404,17.2
+31_CatBoost,CatBoost,logloss,0.5371922931379371,31.29

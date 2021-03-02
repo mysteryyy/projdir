@@ -1,0 +1,77 @@
+{
+    "new_features": [
+        {
+            "feature1": "feature_16",
+            "feature2": "feature_20",
+            "operation": "ratio",
+            "score": 0.5685957641
+        },
+        {
+            "feature1": "feature_20",
+            "feature2": "feature_9",
+            "operation": "ratio",
+            "score": 0.5717385869
+        },
+        {
+            "feature1": "feature_24",
+            "feature2": "feature_36",
+            "operation": "ratio",
+            "score": 0.5737562662
+        },
+        {
+            "feature1": "feature_20",
+            "feature2": "feature_54",
+            "operation": "diff",
+            "score": 0.5760451802
+        },
+        {
+            "feature1": "feature_20",
+            "feature2": "feature_13",
+            "operation": "ratio",
+            "score": 0.5763908219
+        },
+        {
+            "feature1": "feature_20",
+            "feature2": "feature_2",
+            "operation": "ratio",
+            "score": 0.5765149343
+        },
+        {
+            "feature1": "feature_20",
+            "feature2": "feature_25",
+            "operation": "diff",
+            "score": 0.5772784547
+        },
+        {
+            "feature1": "feature_4",
+            "feature2": "feature_24",
+            "operation": "diff",
+            "score": 0.5794776873
+        },
+        {
+            "feature1": "feature_6",
+            "feature2": "feature_24",
+            "operation": "diff",
+            "score": 0.5794776873
+        },
+        {
+            "feature1": "feature_20",
+            "feature2": "feature_29",
+            "operation": "diff",
+            "score": 0.5797960071
+        }
+    ],
+    "new_columns": [
+        "feature_16_ratio_feature_20",
+        "feature_20_ratio_feature_9",
+        "feature_24_ratio_feature_36",
+        "feature_20_diff_feature_54",
+        "feature_20_ratio_feature_13",
+        "feature_20_ratio_feature_2",
+        "feature_20_diff_feature_25",
+        "feature_4_diff_feature_24",
+        "feature_6_diff_feature_24",
+        "feature_20_diff_feature_29"
+    ],
+    "ml_task": "binary_classification"
+}
