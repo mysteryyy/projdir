@@ -1,0 +1,648 @@
+{
+    "uid": "5ba58c61-040c-4ae4-84d6-9396996e11e8",
+    "name": "4_Linear",
+    "preprocessing": [
+        {
+            "remove_columns": [
+                "feature_48",
+                "feature_49",
+                "feature_50"
+            ],
+            "scale": [
+                {
+                    "scale": [
+                        74.09916143425177,
+                        261.12780741490405,
+                        58.175388175496444,
+                        36725.01531101519,
+                        58.28915343475271,
+                        36725.00719890034,
+                        445690140.1422783,
+                        36598700.25803536,
+                        1006.7138905259483,
+                        38.97805363485018,
+                        7.907972542689814,
+                        19.8332588529406,
+                        260.44111282536267,
+                        377.3561090642063,
+                        25.050738644975258,
+                        108.19677518758245,
+                        1.9694293582619307,
+                        2.7005804199383214,
+                        2292.18234491609,
+                        451.01998439268533,
+                        110.99408530879587,
+                        1.9218296245044824,
+                        33214.58580341653,
+                        44480.07261350484,
+                        32094265.430801254,
+                        2224549.52039747,
+                        1.8963692142813964,
+                        1473.453421723693,
+                        450.86495254792914,
+                        3279.2049142717024,
+                        4457791.97066993,
+                        218376.49239477701,
+                        569.7484308243704,
+                        90.95346117213343,
+                        2.1198668664587785,
+                        90.92381145918284,
+                        62.71433275804184,
+                        12485.319535976663,
+                        1268.779731283813,
+                        12486.620261309192,
+                        800.6523403296347,
+                        3383.6834990383654,
+                        697.3220935508294,
+                        7.435466263772772,
+                        454.5775787446196,
+                        19.53997523520566,
+                        110.65233932844382,
+                        91.96692230254446,
+                        99.26310145309914,
+                        3.7962968785910296,
+                        91.99301571410942,
+                        8370.579978732614,
+                        7.31323073096977
+                    ],
+                    "mean": [
+                        90.26732480000001,
+                        40.975740800000004,
+                        9.024252800000001,
+                        891.2923040000001,
+                        9.086025600000001,
+                        892.1851872,
+                        77888688.7627712,
+                        5026088.2189536,
+                        91.7681504,
+                        64.5717952,
+                        1.803008,
+                        3.5502688,
+                        41.4030592,
+                        18.140492799999997,
+                        16.7722048,
+                        24.239088,
+                        0.24910400000000002,
+                        0.5953024,
+                        -52.13711039999999,
+                        21.6334208,
+                        57.10491199999999,
+                        0.08687360000000001,
+                        10963.68968,
+                        4841.296448000001,
+                        4934730.46632,
+                        302802.795568,
+                        0.44309760000000004,
+                        124.0526208,
+                        21.096608,
+                        -23.93782399999998,
+                        655033.9349088001,
+                        35852.7234592,
+                        63.375296,
+                        1.745904,
+                        0.0967968,
+                        -1.6174687999999997,
+                        9.83984,
+                        249.12869760000007,
+                        121.82987519999999,
+                        244.687296,
+                        93.9175264,
+                        -13.319647999999994,
+                        81.34104319999999,
+                        3.5295264,
+                        21.2174656,
+                        3.1027712,
+                        61.45941439999999,
+                        6.4322176,
+                        12.512921600000002,
+                        0.68704,
+                        18.387296,
+                        740.5096352000002,
+                        0.5771455999999999
+                    ],
+                    "var": [
+                        5490.685725259305,
+                        68187.73180531521,
+                        3384.3757893696916,
+                        1348726749.5943,
+                        3397.6254081401444,
+                        1348726153.7592819,
+                        1.9863970102004368e+17,
+                        1339464860577517.8,
+                        1013472.857377891,
+                        1519.2886651612569,
+                        62.536029735936,
+                        393.3581567277466,
+                        67829.5732497133,
+                        142397.63304807717,
+                        627.5395066588569,
+                        11706.542160992258,
+                        3.8786519971840003,
+                        7.293134604554241,
+                        5254099.902345026,
+                        203419.0263215781,
+                        12319.686973536256,
+                        3.6934291056230393,
+                        1103208710.0925186,
+                        1978476859.7026632,
+                        1030041873542724.4,
+                        4948620568700.612,
+                        3.5962161968742405,
+                        2171064.985989259,
+                        203279.20543604638,
+                        10753184.869783683,
+                        19871909253769.293,
+                        47688292430.6461,
+                        324613.2744268324,
+                        8272.532099190785,
+                        4.4938355315097605,
+                        8267.139490265028,
+                        3933.0875332864,
+                        155883203.9154405,
+                        1609802.0065166245,
+                        155915685.55013725,
+                        641044.1700753212,
+                        11449314.021664517,
+                        486258.1021541118,
+                        55.28615855970303,
+                        206640.77509732082,
+                        381.81063219245044,
+                        12243.940198857073,
+                        8457.91479780225,
+                        9853.163310088252,
+                        14.411869990399996,
+                        8462.714940176384,
+                        70066609.1803593,
+                        53.48334372440063
+                    ],
+                    "n_samples_seen": 3125,
+                    "n_features_in": 53,
+                    "columns": [
+                        "feature_1",
+                        "feature_2",
+                        "feature_3",
+                        "feature_4",
+                        "feature_5",
+                        "feature_6",
+                        "feature_7",
+                        "feature_8",
+                        "feature_9",
+                        "feature_10",
+                        "feature_11",
+                        "feature_12",
+                        "feature_13",
+                        "feature_14",
+                        "feature_15",
+                        "feature_16",
+                        "feature_17",
+                        "feature_18",
+                        "feature_19",
+                        "feature_20",
+                        "feature_21",
+                        "feature_22",
+                        "feature_24",
+                        "feature_25",
+                        "feature_27",
+                        "feature_28",
+                        "feature_29",
+                        "feature_30",
+                        "feature_31",
+                        "feature_33",
+                        "feature_34",
+                        "feature_35",
+                        "feature_36",
+                        "feature_38",
+                        "feature_39",
+                        "feature_40",
+                        "feature_41",
+                        "feature_42",
+                        "feature_43",
+                        "feature_44",
+                        "feature_45",
+                        "feature_46",
+                        "feature_47",
+                        "feature_53",
+                        "feature_54",
+                        "feature_55",
+                        "feature_56",
+                        "feature_57",
+                        "feature_58",
+                        "feature_59",
+                        "feature_60",
+                        "feature_61",
+                        "feature_62"
+                    ],
+                    "scale_method": "scale_normal"
+                }
+            ],
+            "ml_task": "binary_classification",
+            "params": {
+                "columns_preprocessing": {
+                    "feature_1": [
+                        "scale_normal"
+                    ],
+                    "feature_2": [
+                        "scale_normal"
+                    ],
+                    "feature_3": [
+                        "scale_normal"
+                    ],
+                    "feature_4": [
+                        "scale_normal"
+                    ],
+                    "feature_5": [
+                        "scale_normal"
+                    ],
+                    "feature_6": [
+                        "scale_normal"
+                    ],
+                    "feature_7": [
+                        "scale_normal"
+                    ],
+                    "feature_8": [
+                        "scale_normal"
+                    ],
+                    "feature_9": [
+                        "scale_normal"
+                    ],
+                    "feature_10": [
+                        "scale_normal"
+                    ],
+                    "feature_11": [
+                        "scale_normal"
+                    ],
+                    "feature_12": [
+                        "scale_normal"
+                    ],
+                    "feature_13": [
+                        "scale_normal"
+                    ],
+                    "feature_14": [
+                        "scale_normal"
+                    ],
+                    "feature_15": [
+                        "scale_normal"
+                    ],
+                    "feature_16": [
+                        "scale_normal"
+                    ],
+                    "feature_17": [
+                        "scale_normal"
+                    ],
+                    "feature_18": [
+                        "scale_normal"
+                    ],
+                    "feature_19": [
+                        "scale_normal"
+                    ],
+                    "feature_20": [
+                        "scale_normal"
+                    ],
+                    "feature_21": [
+                        "scale_normal"
+                    ],
+                    "feature_22": [
+                        "scale_normal"
+                    ],
+                    "feature_24": [
+                        "scale_normal"
+                    ],
+                    "feature_25": [
+                        "scale_normal"
+                    ],
+                    "feature_27": [
+                        "scale_normal"
+                    ],
+                    "feature_28": [
+                        "scale_normal"
+                    ],
+                    "feature_29": [
+                        "scale_normal"
+                    ],
+                    "feature_30": [
+                        "scale_normal"
+                    ],
+                    "feature_31": [
+                        "scale_normal"
+                    ],
+                    "feature_33": [
+                        "scale_normal"
+                    ],
+                    "feature_34": [
+                        "scale_normal"
+                    ],
+                    "feature_35": [
+                        "scale_normal"
+                    ],
+                    "feature_36": [
+                        "scale_normal"
+                    ],
+                    "feature_38": [
+                        "scale_normal"
+                    ],
+                    "feature_39": [
+                        "scale_normal"
+                    ],
+                    "feature_40": [
+                        "scale_normal"
+                    ],
+                    "feature_41": [
+                        "scale_normal"
+                    ],
+                    "feature_42": [
+                        "scale_normal"
+                    ],
+                    "feature_43": [
+                        "scale_normal"
+                    ],
+                    "feature_44": [
+                        "scale_normal"
+                    ],
+                    "feature_45": [
+                        "scale_normal"
+                    ],
+                    "feature_46": [
+                        "scale_normal"
+                    ],
+                    "feature_47": [
+                        "scale_normal"
+                    ],
+                    "feature_48": [
+                        "remove_column"
+                    ],
+                    "feature_49": [
+                        "remove_column"
+                    ],
+                    "feature_50": [
+                        "remove_column"
+                    ],
+                    "feature_53": [
+                        "scale_normal"
+                    ],
+                    "feature_54": [
+                        "scale_normal"
+                    ],
+                    "feature_55": [
+                        "scale_normal"
+                    ],
+                    "feature_56": [
+                        "scale_normal"
+                    ],
+                    "feature_57": [
+                        "scale_normal"
+                    ],
+                    "feature_58": [
+                        "scale_normal"
+                    ],
+                    "feature_59": [
+                        "scale_normal"
+                    ],
+                    "feature_60": [
+                        "scale_normal"
+                    ],
+                    "feature_61": [
+                        "scale_normal"
+                    ],
+                    "feature_62": [
+                        "scale_normal"
+                    ]
+                },
+                "target_preprocessing": [
+                    "na_exclude"
+                ],
+                "ml_task": "binary_classification"
+            }
+        }
+    ],
+    "learners": [
+        {
+            "library_version": "0.24.1",
+            "algorithm_name": "Logistic Regression",
+            "algorithm_short_name": "Linear",
+            "uid": "d5c0ea28-82ba-4824-8f9e-91fc8521b192",
+            "params": {
+                "model_type": "Linear",
+                "ml_task": "binary_classification",
+                "n_jobs": -1,
+                "seed": 1235,
+                "explain_level": 0
+            },
+            "name": "learner_fold_0"
+        }
+    ],
+    "params": {
+        "additional": {
+            "max_steps": 1,
+            "max_rows_limit": null,
+            "max_cols_limit": null
+        },
+        "preprocessing": {
+            "columns_preprocessing": {
+                "feature_1": [
+                    "scale_normal"
+                ],
+                "feature_2": [
+                    "scale_normal"
+                ],
+                "feature_3": [
+                    "scale_normal"
+                ],
+                "feature_4": [
+                    "scale_normal"
+                ],
+                "feature_5": [
+                    "scale_normal"
+                ],
+                "feature_6": [
+                    "scale_normal"
+                ],
+                "feature_7": [
+                    "scale_normal"
+                ],
+                "feature_8": [
+                    "scale_normal"
+                ],
+                "feature_9": [
+                    "scale_normal"
+                ],
+                "feature_10": [
+                    "scale_normal"
+                ],
+                "feature_11": [
+                    "scale_normal"
+                ],
+                "feature_12": [
+                    "scale_normal"
+                ],
+                "feature_13": [
+                    "scale_normal"
+                ],
+                "feature_14": [
+                    "scale_normal"
+                ],
+                "feature_15": [
+                    "scale_normal"
+                ],
+                "feature_16": [
+                    "scale_normal"
+                ],
+                "feature_17": [
+                    "scale_normal"
+                ],
+                "feature_18": [
+                    "scale_normal"
+                ],
+                "feature_19": [
+                    "scale_normal"
+                ],
+                "feature_20": [
+                    "scale_normal"
+                ],
+                "feature_21": [
+                    "scale_normal"
+                ],
+                "feature_22": [
+                    "scale_normal"
+                ],
+                "feature_24": [
+                    "scale_normal"
+                ],
+                "feature_25": [
+                    "scale_normal"
+                ],
+                "feature_27": [
+                    "scale_normal"
+                ],
+                "feature_28": [
+                    "scale_normal"
+                ],
+                "feature_29": [
+                    "scale_normal"
+                ],
+                "feature_30": [
+                    "scale_normal"
+                ],
+                "feature_31": [
+                    "scale_normal"
+                ],
+                "feature_33": [
+                    "scale_normal"
+                ],
+                "feature_34": [
+                    "scale_normal"
+                ],
+                "feature_35": [
+                    "scale_normal"
+                ],
+                "feature_36": [
+                    "scale_normal"
+                ],
+                "feature_38": [
+                    "scale_normal"
+                ],
+                "feature_39": [
+                    "scale_normal"
+                ],
+                "feature_40": [
+                    "scale_normal"
+                ],
+                "feature_41": [
+                    "scale_normal"
+                ],
+                "feature_42": [
+                    "scale_normal"
+                ],
+                "feature_43": [
+                    "scale_normal"
+                ],
+                "feature_44": [
+                    "scale_normal"
+                ],
+                "feature_45": [
+                    "scale_normal"
+                ],
+                "feature_46": [
+                    "scale_normal"
+                ],
+                "feature_47": [
+                    "scale_normal"
+                ],
+                "feature_48": [
+                    "remove_column"
+                ],
+                "feature_49": [
+                    "remove_column"
+                ],
+                "feature_50": [
+                    "remove_column"
+                ],
+                "feature_53": [
+                    "scale_normal"
+                ],
+                "feature_54": [
+                    "scale_normal"
+                ],
+                "feature_55": [
+                    "scale_normal"
+                ],
+                "feature_56": [
+                    "scale_normal"
+                ],
+                "feature_57": [
+                    "scale_normal"
+                ],
+                "feature_58": [
+                    "scale_normal"
+                ],
+                "feature_59": [
+                    "scale_normal"
+                ],
+                "feature_60": [
+                    "scale_normal"
+                ],
+                "feature_61": [
+                    "scale_normal"
+                ],
+                "feature_62": [
+                    "scale_normal"
+                ]
+            },
+            "target_preprocessing": [
+                "na_exclude"
+            ],
+            "ml_task": "binary_classification"
+        },
+        "validation_strategy": {
+            "validation_type": "split",
+            "train_ratio": 0.9,
+            "shuffle": true,
+            "stratify": true,
+            "X_path": "AutoML_3/X.parquet",
+            "y_path": "AutoML_3/y.parquet",
+            "results_path": "AutoML_3"
+        },
+        "learner": {
+            "model_type": "Linear",
+            "ml_task": "binary_classification",
+            "n_jobs": -1,
+            "seed": 1235,
+            "explain_level": 0
+        },
+        "ml_task": "binary_classification",
+        "explain_level": 0,
+        "name": "4_Linear",
+        "status": "initialized",
+        "final_loss": null,
+        "train_time": null,
+        "max_time_for_learner": 60
+    },
+    "saved": [
+        "4_Linear/learner_fold_0.linear"
+    ],
+    "predictions_fname": "4_Linear/predictions_validation.csv",
+    "metric_name": "logloss",
+    "final_loss": 0.606570332595208,
+    "train_time": 3.085909128189087,
+    "is_stacked": false,
+    "threshold": 0.4056297568261439
+}

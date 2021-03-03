@@ -1,0 +1,249 @@
+{
+    "columns": [
+        "feature_1",
+        "feature_2",
+        "feature_3",
+        "feature_4",
+        "feature_5",
+        "feature_6",
+        "feature_7",
+        "feature_8",
+        "feature_9",
+        "feature_10",
+        "feature_11",
+        "feature_12",
+        "feature_13",
+        "feature_14",
+        "feature_15",
+        "feature_16",
+        "feature_17",
+        "feature_18",
+        "feature_19",
+        "feature_20",
+        "feature_21",
+        "feature_22",
+        "feature_23",
+        "feature_24",
+        "feature_25",
+        "feature_26",
+        "feature_27",
+        "feature_28",
+        "feature_29",
+        "feature_30",
+        "feature_31",
+        "feature_32",
+        "feature_33",
+        "feature_34",
+        "feature_35",
+        "feature_36",
+        "feature_37",
+        "feature_38",
+        "feature_39",
+        "feature_40",
+        "feature_41",
+        "feature_42",
+        "feature_43",
+        "feature_44",
+        "feature_45",
+        "feature_46",
+        "feature_47",
+        "feature_48",
+        "feature_49",
+        "feature_50",
+        "feature_51",
+        "feature_52",
+        "feature_53",
+        "feature_54",
+        "feature_55",
+        "feature_56",
+        "feature_57",
+        "feature_58",
+        "feature_59",
+        "feature_60",
+        "feature_61",
+        "feature_62"
+    ],
+    "rows": 3473,
+    "cols": 62,
+    "target_is_numeric": true,
+    "columns_info": {
+        "feature_1": [
+            "scale"
+        ],
+        "feature_2": [
+            "scale"
+        ],
+        "feature_3": [
+            "scale"
+        ],
+        "feature_4": [
+            "scale"
+        ],
+        "feature_5": [
+            "scale"
+        ],
+        "feature_6": [
+            "scale"
+        ],
+        "feature_7": [
+            "scale"
+        ],
+        "feature_8": [
+            "scale"
+        ],
+        "feature_9": [
+            "scale"
+        ],
+        "feature_10": [
+            "scale"
+        ],
+        "feature_11": [
+            "scale"
+        ],
+        "feature_12": [
+            "scale"
+        ],
+        "feature_13": [
+            "scale"
+        ],
+        "feature_14": [
+            "scale"
+        ],
+        "feature_15": [
+            "scale"
+        ],
+        "feature_16": [
+            "scale"
+        ],
+        "feature_17": [
+            "scale"
+        ],
+        "feature_18": [
+            "scale"
+        ],
+        "feature_19": [
+            "scale"
+        ],
+        "feature_20": [
+            "scale"
+        ],
+        "feature_21": [
+            "scale"
+        ],
+        "feature_22": [
+            "scale"
+        ],
+        "feature_23": [],
+        "feature_24": [
+            "scale"
+        ],
+        "feature_25": [
+            "scale"
+        ],
+        "feature_26": [],
+        "feature_27": [
+            "scale"
+        ],
+        "feature_28": [
+            "scale"
+        ],
+        "feature_29": [
+            "scale"
+        ],
+        "feature_30": [
+            "scale"
+        ],
+        "feature_31": [
+            "scale"
+        ],
+        "feature_32": [],
+        "feature_33": [
+            "scale"
+        ],
+        "feature_34": [
+            "scale"
+        ],
+        "feature_35": [
+            "scale"
+        ],
+        "feature_36": [
+            "scale"
+        ],
+        "feature_37": [],
+        "feature_38": [
+            "scale"
+        ],
+        "feature_39": [
+            "scale"
+        ],
+        "feature_40": [
+            "scale"
+        ],
+        "feature_41": [
+            "scale"
+        ],
+        "feature_42": [
+            "scale"
+        ],
+        "feature_43": [
+            "scale"
+        ],
+        "feature_44": [
+            "scale"
+        ],
+        "feature_45": [
+            "scale"
+        ],
+        "feature_46": [
+            "scale"
+        ],
+        "feature_47": [
+            "scale"
+        ],
+        "feature_48": [
+            "constant_column"
+        ],
+        "feature_49": [
+            "constant_column"
+        ],
+        "feature_50": [
+            "constant_column"
+        ],
+        "feature_51": [],
+        "feature_52": [],
+        "feature_53": [
+            "scale"
+        ],
+        "feature_54": [
+            "scale"
+        ],
+        "feature_55": [
+            "scale"
+        ],
+        "feature_56": [
+            "scale"
+        ],
+        "feature_57": [
+            "scale"
+        ],
+        "feature_58": [
+            "scale"
+        ],
+        "feature_59": [
+            "scale"
+        ],
+        "feature_60": [
+            "scale"
+        ],
+        "feature_61": [
+            "scale"
+        ],
+        "feature_62": [
+            "scale"
+        ]
+    },
+    "target_info": [],
+    "n_features": 62,
+    "is_sample_weighted": false,
+    "n_classes": 2
+}

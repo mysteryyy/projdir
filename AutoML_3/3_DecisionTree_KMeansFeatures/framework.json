@@ -1,0 +1,209 @@
+{
+    "uid": "921df1a2-1050-46c4-ba3f-3f247fcc7618",
+    "name": "3_DecisionTree_KMeansFeatures",
+    "preprocessing": [
+        {
+            "remove_columns": [
+                "feature_48",
+                "feature_49",
+                "feature_50"
+            ],
+            "kmeans": {
+                "new_features": [
+                    "Dist_Cluster_0",
+                    "Dist_Cluster_1",
+                    "Dist_Cluster_2",
+                    "Dist_Cluster_3",
+                    "Dist_Cluster_4",
+                    "Dist_Cluster_5",
+                    "Dist_Cluster_6",
+                    "Dist_Cluster_7",
+                    "Dist_Cluster_8",
+                    "Dist_Cluster_9",
+                    "Dist_Cluster_10",
+                    "Dist_Cluster_11",
+                    "Dist_Cluster_12",
+                    "Dist_Cluster_13",
+                    "Dist_Cluster_14",
+                    "Dist_Cluster_15",
+                    "Dist_Cluster_16",
+                    "Dist_Cluster_17",
+                    "Dist_Cluster_18",
+                    "Dist_Cluster_19",
+                    "Dist_Cluster_20",
+                    "Dist_Cluster_21",
+                    "Dist_Cluster_22",
+                    "Dist_Cluster_23",
+                    "Dist_Cluster_24",
+                    "Dist_Cluster_25",
+                    "Dist_Cluster_26",
+                    "Cluster"
+                ],
+                "result_file": "3_DecisionTree_KMeansFeatures/kmeans_fold_0.joblib",
+                "input_columns": [
+                    "feature_1",
+                    "feature_2",
+                    "feature_3",
+                    "feature_4",
+                    "feature_5",
+                    "feature_6",
+                    "feature_7",
+                    "feature_8",
+                    "feature_9",
+                    "feature_10",
+                    "feature_11",
+                    "feature_12",
+                    "feature_13",
+                    "feature_14",
+                    "feature_15",
+                    "feature_16",
+                    "feature_17",
+                    "feature_18",
+                    "feature_19",
+                    "feature_20",
+                    "feature_21",
+                    "feature_22",
+                    "feature_23",
+                    "feature_24",
+                    "feature_25",
+                    "feature_26",
+                    "feature_27",
+                    "feature_28",
+                    "feature_29",
+                    "feature_30",
+                    "feature_31",
+                    "feature_32",
+                    "feature_33",
+                    "feature_34",
+                    "feature_35",
+                    "feature_36",
+                    "feature_37",
+                    "feature_38",
+                    "feature_39",
+                    "feature_40",
+                    "feature_41",
+                    "feature_42",
+                    "feature_43",
+                    "feature_44",
+                    "feature_45",
+                    "feature_46",
+                    "feature_47",
+                    "feature_51",
+                    "feature_52",
+                    "feature_53",
+                    "feature_54",
+                    "feature_55",
+                    "feature_56",
+                    "feature_57",
+                    "feature_58",
+                    "feature_59",
+                    "feature_60",
+                    "feature_61",
+                    "feature_62"
+                ]
+            },
+            "ml_task": "binary_classification",
+            "params": {
+                "columns_preprocessing": {
+                    "feature_48": [
+                        "remove_column"
+                    ],
+                    "feature_49": [
+                        "remove_column"
+                    ],
+                    "feature_50": [
+                        "remove_column"
+                    ]
+                },
+                "target_preprocessing": [
+                    "na_exclude"
+                ],
+                "ml_task": "binary_classification",
+                "kmeans_features": {
+                    "results_path": "AutoML_3"
+                }
+            }
+        }
+    ],
+    "learners": [
+        {
+            "library_version": "0.24.1",
+            "algorithm_name": "Decision Tree",
+            "algorithm_short_name": "Decision Tree",
+            "uid": "9fba2d68-2296-45a1-8af9-e8e90f637571",
+            "params": {
+                "model_type": "Decision Tree",
+                "ml_task": "binary_classification",
+                "n_jobs": -1,
+                "seed": 1237,
+                "criterion": "gini",
+                "max_depth": 4,
+                "explain_level": 0
+            },
+            "name": "learner_fold_0"
+        }
+    ],
+    "params": {
+        "additional": {
+            "trees_in_step": 1,
+            "train_cant_improve_limit": 0,
+            "max_steps": 1,
+            "max_rows_limit": null,
+            "max_cols_limit": null
+        },
+        "preprocessing": {
+            "columns_preprocessing": {
+                "feature_48": [
+                    "remove_column"
+                ],
+                "feature_49": [
+                    "remove_column"
+                ],
+                "feature_50": [
+                    "remove_column"
+                ]
+            },
+            "target_preprocessing": [
+                "na_exclude"
+            ],
+            "ml_task": "binary_classification",
+            "kmeans_features": {
+                "results_path": "AutoML_3"
+            }
+        },
+        "validation_strategy": {
+            "validation_type": "split",
+            "train_ratio": 0.9,
+            "shuffle": true,
+            "stratify": true,
+            "X_path": "AutoML_3/X.parquet",
+            "y_path": "AutoML_3/y.parquet",
+            "results_path": "AutoML_3"
+        },
+        "learner": {
+            "model_type": "Decision Tree",
+            "ml_task": "binary_classification",
+            "n_jobs": -1,
+            "seed": 1237,
+            "criterion": "gini",
+            "max_depth": 4,
+            "explain_level": 0
+        },
+        "ml_task": "binary_classification",
+        "explain_level": 0,
+        "name": "3_DecisionTree_KMeansFeatures",
+        "status": "initialized",
+        "final_loss": null,
+        "train_time": null,
+        "max_time_for_learner": 60
+    },
+    "saved": [
+        "3_DecisionTree_KMeansFeatures/learner_fold_0.decision_tree"
+    ],
+    "predictions_fname": "3_DecisionTree_KMeansFeatures/predictions_validation.csv",
+    "metric_name": "logloss",
+    "final_loss": 0.5316183882844324,
+    "train_time": 1.432074785232544,
+    "is_stacked": false,
+    "threshold": 0.5174311926605505
+}
