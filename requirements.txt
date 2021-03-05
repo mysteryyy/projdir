@@ -70,6 +70,7 @@ investpy==1.0
 jeepney==0.4.3
 joblib==0.14.1
 julia @ file:///home/sahil/pythonbackup/pyjulia
+kazam==1.4.5
 Keras-Preprocessing==1.1.2
 keyring==21.3.0
 kiteconnect==3.9.0
