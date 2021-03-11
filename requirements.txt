@@ -8,8 +8,10 @@ attrs==20.3.0
 autobahn==20.7.1
 Automat==20.2.0
 bcrypt==3.1.7
+beautifulsoup4==4.9.3
 blinker==1.4
 Brlapi==0.7.0
+bs4==0.0.1
 cachetools==4.2.0
 catboost==0.24.4
 category-encoders==2.2.2
@@ -98,6 +100,7 @@ multitasking==0.0.9
 netCDF4==1.5.4
 netifaces==0.10.4
 nolds==0.5.2
+nsepy==0.8
 numba==0.52.0
 numdifftools==0.9.39
 numpy==1.19.4
@@ -169,6 +172,7 @@ shap==0.36.0
 simplejson==3.17.0
 six==1.15.0
 slicer==0.0.7
+soupsieve==2.2
 statsmodels==0.12.1
 systemd-python==234
 tabulate==0.8.7
