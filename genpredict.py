@@ -37,7 +37,9 @@ def datestring(dt):
 def getprice(symb):
     today = datestring(datetime.datetime.now())
     startday = datestring(datetime.datetime.now()-timedelta(days=5))
-    k1=investpy.search_quotes(text=symb,products=['stocks'],countries=['India'],n_results=2)[0].retrieve_historical_data(from_date=startday,to_date=today)
+    k1=investpy.search_quotes(text=symb,products=['stocks'],countries=['India'],n_results=2)[0]
+    symb=k1.symbol
+    k1=investpy.stocks.get_stock_historical_data(stock=symb,country='India',from_date=startday,to_date=today)
     price = k1.Close.iloc[-1]
     return price,k1
     #
