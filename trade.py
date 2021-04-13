@@ -53,7 +53,7 @@ kite = pck.load(open('kite.obj','rb'))
 kws = KiteTicker(apikey,in1["access_token"])
 tck=[]
 tq=0
-r1=kite.margins()['equity']['net']/6
+r1=kite.margins()['equity']['net']
 #if r1>3000:
 #    r1=3000
 
