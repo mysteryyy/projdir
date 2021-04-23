@@ -139,6 +139,7 @@ Pygments==2.7.2
 PyGObject==3.38.0
 PyHamcrest==2.0.2
 PyJWT==1.7.1
+pykalman==0.9.5
 pymacaroons==0.13.0
 pymc3==3.9.3
 PyNaCl==1.4.0
