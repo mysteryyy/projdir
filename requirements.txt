@@ -26,6 +26,8 @@ colorama==0.4.3
 colour==0.1.5
 command-not-found==0.3
 constantly==15.1.0
+copula==0.0.4
+copulas==0.5.0
 cryptography==3.0
 cupshelpers==1.0
 cvxopt==1.2.5
@@ -111,7 +113,8 @@ openpyxl==3.0.7
 opt-einsum==3.3.0
 osqp==0.6.1
 packaging==20.4
-pandas==1.2.0
+pandas==1.2.4
+pandas-io==0.0.1
 paramiko==2.7.1
 patsy==0.5.1
 pdbpp==0.10.2
