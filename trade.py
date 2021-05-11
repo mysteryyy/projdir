@@ -79,7 +79,8 @@ def stream():
         tck = ticks
         orderid=[]
         for i in ticks:
-            if(i['last_price']<=price):
+            last_price=i['last_price']
+            if(last_price<=price):
                 print("exiting because there is no gap")
                 sys.exit()
             k1 = k[k.tokens==i['instrument_token']]
@@ -95,14 +96,14 @@ def stream():
             sl = k1.nsl.values[0]
             tp = k1.psl.values[0]
             m = k1.margins.values[0]
-            quant=int(qcalc(sl,m,i['last_price'],k1.weights.values[0]))
+            quant=int(qcalc(sl,m,last_price,k1.weights.values[0]))
             print(quant)
             tried=0
             tick=k1.tick.values[0]
-            slp =round((abs(sl)/100)*i['last_price'],2) 
-            tpp =round((abs(tp)/100)*i['last_price'],2) 
-            trigsl = i['last_price']-slp if k1.prediction.values[0]>0 else i['last_price']+slp
-            trigtp = i['last_price']+tpp if k1.prediction.values[0]>0 else i['last_price']-tpp
+            slp =round((abs(sl)/100)*last_price,2) 
+            tpp =round((abs(tp)/100)*last_price,2) 
+            trigsl = last_price-slp if k1.prediction.values[0]>0 else last_price+slp
+            trigtp = last_price+tpp if k1.prediction.values[0]>0 else last_price-tpp
             trigtp = trigtp-trigtp%tick
             print('take profit ',trigtp)
             trigsl = trigsl-trigsl%tick
